@@ -94,7 +94,7 @@ hbs.registerPartials('./app_server/views/partials');
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
-require('./app_server/views/helpers/hbsHelpers');
+//require('./app_server/views/helpers/hbsHelpers');
 
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '50MB'}));
