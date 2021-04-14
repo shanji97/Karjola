@@ -1,0 +1,15 @@
+http://localhost:3000/
+http://localhost:3000/prijava
+http://localhost:3000/registracija
+http://localhost:3000/splosniPogoji
+http://localhost:3000/uporabniki/5ff07a5d8ba53a0fb8ecb8cf
+http://localhost:3000/uporabniki/5ff07b748ba53a0fb8ecb8d0
+http://localhost:3000/obnoviGeslo
+http://localhost:3000/db
+http://localhost:3000/vnesiNovoGeslo/ad1234@student.uni-lj.si
+http://localhost:3000/statistike
+http://localhost:3000/admin
+http://localhost:3000/predmeti/5fbd02fc05e8d932232dc687
+http://localhost:3000/predmeti/5fbd02fc05e8d932232dc688
+http://localhost:3000/predmeti/5fbd02fc05e8d932232dc689
+http://localhost:3000/iskanje

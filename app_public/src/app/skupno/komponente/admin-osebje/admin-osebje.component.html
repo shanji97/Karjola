@@ -1,0 +1,24 @@
+<!-- OSEBJE -->
+<div class="section-prof-asist">
+  <div class="row">
+    <div class="naslov-sekcije col-sm-11 col-md-11 col-xl-11">
+      <span class="float-left"><p class="text-dark"><b>OSEBJE</b></p></span>
+      <span class="float-left ml-4 mb-2"><button class="btn btn-dark btn-admin px-5" (click)="openModal('new')" [disabled]="!jePovezava()">Dodaj osebo</button></span>
+    </div>
+  </div>
+  <div class="podsekcije">
+    <div class="row" *ngFor="let oseba of osebje; let i = index">
+      <div class="ena-vrstica col-sm-10 col-md-9 col-xl-9">
+        <p>
+          <span style="float: left"><b>{{ oseba.ime_priimek }}</b></span>
+          <span style="float: right">
+            <button class="btn btn-dark btn-admin mx-2 my-0"
+                    (click)="openModal('update', oseba, i)" [disabled]="!jePovezava()">Uredi osebo</button>
+            <button class="btn btn-danger btn-admin text-dark mx-2" (click)="openModal('delete', oseba, i)" [disabled]="!jePovezava()"><i
+              class="far fa-trash-alt fa-lg" style="color:black;" [disabled]="!jePovezava()"></i></button>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

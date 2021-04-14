@@ -1,0 +1,71 @@
+$grey_color:rgba(84, 84, 84,1);
+
+$placeholder_text: #6c757d;
+//Alerts
+$success:#83D856;
+$warning:#D9D74C;
+$danger:#D94141;
+
+$btn_color: green;
+$btn_hover: rgb(0, 161, 0);
+$input_background: rgba(53, 53, 53,1);
+$input_hover_color: rgb(194, 194, 194);
+$placeholder_text: #6c757d;
+
+
+body
+{
+    background-color:$grey_color;
+    color: white;
+}
+
+.form-control
+{
+    background-color: $input_background;
+    color: white;
+
+    &:focus {
+        background-color: $input_background;
+        color: white;
+    }
+    &:disabled {
+        background-color: $input_background;
+        color:white;
+    }
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $placeholder_text;
+        opacity: 1; /* Firefox */
+    }
+}
+
+
+.alerts{
+    color:inherit;
+}
+.alert{
+    display: none;
+}
+
+.btn-primary {
+    background-color: $btn_color;
+    border-color: $btn_color;
+
+    &:hover {
+        background-color: $btn_hover;
+        border-color: $btn_hover;
+    }
+}
+
+.alert-warning{
+    background-color: $warning;    
+    border-color:$warning;
+}
+.alert-success{
+    background-color: $success; 
+    border-color: $success;;
+}
+.alert-danger{
+    background-color: $danger;
+    border-color: $danger;
+}

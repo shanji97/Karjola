@@ -1,0 +1,28 @@
+<div class="content bg-dark p-3">
+  <h2 class="formtitle">{{glava.naslov}}</h2>
+  <br/>
+  <form (submit)="posiljanjePodatkov()" role="form">
+    <div class="form-group col-md-12" id="enterEmailForgetPassword">
+      <label for="exampleInputEmail1">E-POŠTA <em class="required">*</em></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+             placeholder="Vnesi e-poštni naslov za ponastavitev gesla" [(ngModel)]="obnovitveniPodatki.ePosta" required
+             name="ePosta" autocomplete="on"
+             pattern="[a-z]{2}[0-9]{4}@student.uni-lj.si"
+             title="Vnesi e-poštni naslov, ki si ga prejel s strani Univerze v Ljubljani. Primer: jn0000@student.uni-lj.si" [disabled]="!jePovezava()">
+      <br/>
+      <button type="submit" id="submit" class="btn btn-primary" [disabled]="!jePovezava()">Ponastavi geslo!</button>
+    </div>
+    <br>
+    <div class="alert alert-info fade show col-md-12" *ngIf="!jePovezava()"  role="alert">
+      Ni povezave z internetom!
+    </div>
+    <br>
+    <div class="alert alert-danger alert-dismissible fade show col-md-12" *ngIf="napakaNaObrazcu" role="alert">
+      <strong id="danger-strong">{{napaka}}</strong><span id="danger-navadno">{{napakaNaObrazcu}}</span>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show " *ngIf="uspesnoObvestilo" role="alert">
+      <strong id="success-strong">Navodila za ponastavitev gesla so bila poslana!</strong><span
+      id="success-navadno"></span>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,139 @@
+$backgroundColor: #545454;
+
+$lvl1Color: rgb(2, 180, 2);
+$lvl2Color: rgb(87, 231, 87);
+$lvl3Color: rgb(155, 236, 155);
+$lvl4Color: rgb(203, 233, 203);
+
+$gradivoOptioncolor: yellow;
+
+$lightFontColor: white;
+$darkFontColor: black;
+
+body {
+    background-color: $backgroundColor;
+
+    .bg-darkerBg {
+        background-color: #353535;
+    }
+    
+    .bg-default {
+        background-color: $backgroundColor;
+    }
+    .bg-green-lvl1 {
+        background-color: $lvl1Color;
+    }
+    .bg-green-lvl2 {
+        background-color: $lvl2Color;
+    }
+    .bg-green-lvl3 {
+        background-color: $lvl3Color;
+    }
+    .bg-green-lvl4 {
+        background-color: $lvl4Color;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .wrapDiv {
+        display: inline-block;
+    }
+
+    .centerDiv {
+        margin:0 auto;
+    }
+
+    .scrollable {
+        height:  100%;
+        overflow-y: auto; 
+    }
+
+    .gradivoOptions {
+        background-color: $gradivoOptioncolor;
+        &:hover {
+            background-color: darken($gradivoOptioncolor, 20%);
+        }
+        text-align: center;
+
+        font-size: 15px;
+        border-radius: 10px;
+    }    
+
+    .komentar {
+        background-color: $lvl4Color;
+        border-radius: 10px;
+    }
+
+    .predmet-btn {
+        background-color: $lvl1Color;
+        &:hover {
+            background-color: darken($lvl1Color, 10%);
+        }
+        text-align: left;
+        overflow: auto;
+        width: 100%;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+}
+
+aside {
+    .content {
+        font-size: 18px;
+        border-radius: 20px;
+        color: $lightFontColor;
+
+        .menu-icon {
+            font-size: 24px;
+        }
+        
+    }
+
+    .dropdown-btn {
+        color: $darkFontColor;
+        text-align: left;
+        width: 100%;
+        font-size: 20px;
+        border-radius: 10px;
+
+        &.dropdown-lvl-1 {
+            background-color: $lvl1Color;
+        }
+
+        &.dropdown-lvl-2 {
+            background-color: $lvl2Color;
+        }
+
+        &.dropdown-lvl-3 {
+            background-color: $lvl3Color;
+        }
+
+        &.dropdown-lvl-4 {
+            background-color: $lvl4Color;
+        }
+
+        &.dropdown-link {
+            &:hover {
+                color: $darkFontColor;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+main {
+    .content {
+        font-size: 18px;
+        border-radius: 20px;
+        color: $lightFontColor;
+    }
+    .formtitle{
+        text-align: center;
+    }
+}
+
+
+
+

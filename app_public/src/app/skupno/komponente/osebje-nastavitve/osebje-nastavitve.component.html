@@ -1,0 +1,71 @@
+<div class="p-5 content bg-dark">
+  <p class="h3 p-3">{{ naslov }}</p>
+
+  <p id="idOseba" class="hidden">{{ profesorAsistent._id }}</p>
+
+  <div class="vsebina">
+    <form action="#">
+      <div class="form-group col-11">
+        <label for="formAkademskiNazivInput">AKADEMSKI NAZIV</label>
+        <select class="form-control" id="formAkademskiNazivInput" [disabled]="!jePovezava()">
+          <option hidden>{{ profesorAsistent.akademskiNaziv }}</option>
+          <option>brez</option>
+          <option>asistent</option>
+          <option>docent</option>
+          <option>profesor</option>
+        </select>
+      </div>
+      <div class="form-group col-11">
+        <label for="formIzobrazbaInput">IZOBRAZBA</label>
+        <input type="text" class="form-control" id="formIzobrazbaInput" value="{{ profesorAsistent.izobrazba }}"
+               placeholder="npr. dipl. inž. rač. mat." [disabled]="!jePovezava()">
+      </div>
+      <div class="form-group col-11">
+        <label for="formImeInPriimekInput">IME IN PRIIMEK</label>
+        <input type="text" class="form-control" id="formImeInPriimekInput" value="{{ profesorAsistent.ime_priimek }}"
+               placeholder="Ime Priimek" [disabled]="!jePovezava()">
+      </div>
+      <div class="form-group col-11">
+        <label for="textAreaOpis">OPIS</label>
+        <textarea class="form-control" id="textAreaOpis" rows="4"
+                  placeholder="Kratek opis izobrazbe, dela, področij raziskovanja." [disabled]="!jePovezava()">{{ profesorAsistent.opis }}</textarea>
+        <div class="btn-objavi">
+          <button class="btn btn-success" id="zelen-gumb" type="submit" [disabled]="!jePovezava()">Shrani</button>
+          <button class="btn btn-danger" id="rdec-gumb" type="submit"[disabled]="!jePovezava()">Izbriši</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ALERTS -->
+<div class="alert alert-warning alert-dismissible fade show" id="alert-izobrazba" role="alert">
+  Vpišite ustrezno izobrazbo.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" [disabled]="!jePovezava()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" id="alert-ime-priimek" role="alert">
+  Vpišite ustrezno ime in priimek.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" [disabled]="!jePovezava()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" id="alert-ni-slike" role="alert">
+  Naložiti je potrebno tudi sliko.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" [disabled]="!jePovezava()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" id="alert-empty-polja" role="alert">
+  Izpolniti je potrebno vsa polja.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" [disabled]="!jePovezava()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-success alert-dismissible fade show" id="alert-oseba-posodobljena" role="alert">
+  Oseba je uspešno posodobljena!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

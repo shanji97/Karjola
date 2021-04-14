@@ -1,0 +1,22 @@
+<p class="h5 ml-3 d-inline">
+  <span *ngIf="komentar.avtor">{{komentar.avtor.uporabniskoIme}} <span *ngIf="komentar.anonimnost">(Anonimno)</span></span>
+  <span *ngIf="!komentar.avtor">Anonimen uporabnik</span>
+</p>
+<p class="h6 ml-3">{{komentar.datum | casOddaje}}</p>
+<p class="p-3">{{komentar.besedilo}}</p>
+
+<ng-container *ngIf="jeAdmin">
+  <p class="px-3 text-danger">Št. prijav: {{komentar.stPrijav}}</p>
+  <button (click)="izbrisiKomentar(komentar)" class="btn btn-secondary mx-3 mb-3">
+    <i class="fa fa-trash-alt mx-3"></i>
+  </button>
+</ng-container>
+  
+  
+<ng-container *ngIf="!jeAdmin">
+  <button *ngIf="jeAvtor" (click)="izbrisiKomentar()" class="btn btn-secondary mx-3 mb-3">
+    <i class="fa fa-trash-alt mx-3"></i>
+  </button>
+
+  <button *ngIf="!jeAvtor" (click)="prijaviKomentar()" class="btn btn-secondary mx-2 mb-3 p-1">Prijavi komentar</button>
+</ng-container>

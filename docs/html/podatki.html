@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <title>Grafikoni</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">      
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <!-- Clicking on this should take you to home-->
+            <a class="navbar-brand mx-3 h1 mb-0 pr-5" href="#">
+                <span><b>Karjola</b></span>
+                <img src=".\img\Logo.png" width="50" height="50" alt="">
+            </a>
+            <!-- Toggle navbar when screen gets too small-->
+            <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#toggleNavBar"></button>
+            <div class="collapse navbar-collapse" id="toggleNavBar">
+
+                <!-- Login anad register buttons-->
+                <div class="nav-item my-2">
+                    <a class="nav-link btn btn-secondary py-1 ml-auto mr-2 px-2 " href="prijava.html">Prijava</a>
+                </div>
+                <div class="nav-item my-2">
+                    <a class="nav-link btn btn-success py-1 ml-auto mr-2 px-2" href="registracija.html">Registracija</a>
+                </div>
+                
+                <!-- Search button-->
+                <div class="nav-item ml-auto my-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchinput" placeholder="Išči gradivo">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="button">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+        <div class="row m-0 mt-2">
+            <aside class="col-sm-12 col-md-12 col-lg-3 m-0 p-sm-0 px-md-2 mt-3">
+                <div class="content bg-dark p-3">
+                    <div class="menu-icon mb-1" data-toggle="collapse" data-target="#sidebarMenu">
+                        <span class="fas fa-bars"></span>
+                    </div>
+    
+                    <div class="collapse show" id="sidebarMenu">
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1" 
+                                data-toggle="collapse" 
+                                data-target="#sidebarLetnik">
+                            Letniki
+                        </button> 
+                        <div id="sidebarLetnik" class="collapse show pl-2">
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1" 
+                                    data-toggle="collapse" 
+                                    data-target="#sidebarLetnik1">1. letnik</button>
+                            <div id="sidebarLetnik1" class="collapse show pl-2">
+                                <button class="dropdown-btn dropdown-lvl-3 btn btn-secondary mr-2 my-1"
+                                        data-toggle="collapse"
+                                        data-target="#sidebarSemester1">1. semester</button>
+                                <div id="sidebarSemester1" class="collapse pl-2">
+                                </div>
+    
+                                <button class="dropdown-btn dropdown-lvl-3 btn btn-secondary mr-2 my-1"
+                                        data-toggle="collapse"
+                                        data-target="#sidebarSemester2">2. semester</button>
+                                <div id="sidebarSemester2" class="collapse show pl-2">
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Računalniške komunikacije</a>
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Linearna algebra</a>
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Osnove informacijskih sistemov</a>
+                                </div>
+                            </div>
+    
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1"
+                                    data-toggle="collapse"
+                                    data-target="#sidebarLetnik2">2. letnik</button>
+                            <div id="sidebarLetnik2" class="collapse pl-2">
+                            </div>
+    
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1"
+                                    data-toggle="collapse"
+                                    data-target="#sidebarSemester1">3. letnik</button>
+                            <div id="sidebarLetnik3" class="collapse pl-2">
+                            </div>
+                        </div>
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Moduli
+                        </button> 
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Strokovni izbirni predmeti
+                        </button> 
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Splošni izbirni predmeti
+                        </button>     
+                    </div>                    
+                </div>
+            </aside>
+          <main class="col-sm-12 col-md-12 col-lg-9 mt-3 m-0 p-sm-0 px-md-2">
+              <div class="content bg-dark p-3">
+                <h2 class="formtitle">Statistike</h2>
+                    <div class="col-md-12">
+                        <h3 class="formtitle">Število prenosov vseh datotek po mesecu</h3>
+                        <canvas id="steviloPrenosov" width="auto" height="auto"></canvas>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="formtitle">Razporeditev uporabnikov po krajih</h3>
+                        <canvas id="razporeditevUporabnikov" width="auto" height="auto"></canvas>
+                    </div>
+                </div>
+          </main>
+      </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script src="../js/chart.js"></script>
+    </body>
+</html>

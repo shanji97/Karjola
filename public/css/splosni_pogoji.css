@@ -1,0 +1,7 @@
+#besedilo1,  #besedilo2, #besedilo3, #besedilo4 {
+    display: none;
+}
+
+h6:hover {
+    cursor: pointer;
+}

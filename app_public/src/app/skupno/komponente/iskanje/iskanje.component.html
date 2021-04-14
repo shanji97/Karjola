@@ -1,0 +1,81 @@
+<main class="col-md-12 col-lg-12">
+  <!--
+  <table *ngIf="gradiva?.length > 0" class="table table-dark table-striped table-hover text-center col-md-12">
+    <thead>
+        <tr>
+          <th>DATOTEKA</th>
+          <th>PREDMET</th>
+          <th>VELIKOST</th>
+        </tr>
+    </thead>
+    <tbobdy>
+        <tr *ngFor="let gradivo of gradiva">
+          <td *ngIf="gradivo.isFile"><a class="text-light">{{gradivo.datoteka.ime}}</a></td>
+          <td *ngIf="!gradivo.isFile"><a class="text-light">{{gradivo.povezava}}</a></td>
+          <td><a class="text-light" routerLink="predmeti/{{gradivo.predmet._id}}">{{gradivo.predmet.ime}}</a></td>
+          <td>{{gradivo.velikost}}</td>
+        </tr>
+    </tbobdy>
+  </table>
+
+    <table *ngIf="predmeti?.length > 0" class="table table-dark table-striped table-hover text-center col-md-12">
+        <thead>
+        <tr>
+            <th>PREDMET</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let predmet of predmeti">
+            <td><a class="text-light" routerLink="/predmeti/{{predmet._id}}">{{predmet.ime}}</a></td>
+        </tr>
+    </table>
+
+
+    <table *ngIf="osebje?.length > 0" class="table table-dark table-striped table-hover text-center col-md-12">
+        <thead>
+        <tr>
+            <th>PROFESORJI IN ASISTENTI</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let oseba of osebje">
+            <td><a (click)="openOsebje(oseba._id)" class="text-light hoverNoLink">{{oseba.ime_priimek}}</a></td>
+        </tr>
+    </table>
+    <p *ngIf="gradiva?.length == 0 && predmeti?.length == 0 && osebje?.length == 0">Za ta iskalni niz ni rezultatov</p>
+    -->
+
+    <div class=" col-sm-12 col-md-9 col-xl-9">
+      <form action="/iskanje" method="get" class="d-inline">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="iskalniIzraz" [ngModelOptions]="{standalone: true}" placeholder="Iskanje" [disabled] ="!jePovezava()">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" (click)="iskanje()" [disabled]="!jePovezava()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <span>
+      <span class="float-left mt-4"><p class="ml-3">filtriranje rezultatov:</p></span>
+      <button (click)="predmetiFilter = !predmetiFilter" [ngClass]="{'btn-predmet' : predmetiFilter, 'btn-predmet-outline' : !predmetiFilter}" class="btn  m-3 ">predmeti</button>
+      <button (click)="osebjeFilter = !osebjeFilter" [ngClass]="{'btn-osebje' : osebjeFilter, 'btn-osebje-outline' : !osebjeFilter}" class="btn m-3 ">osebje</button>
+    </span>
+
+    <div class="ena-vrstica mb-3 py-2 col-sm-12 col-md-9 col-xl-9 text-center">Rezultati iskanja za: "{{ iskalniIzraz }}"</div>
+    <div style="margin-left: 10px;" class="alert alert-warning col-sm-12 col-md-9 col-xl-9" [hidden]="!sporociloNapaka">{{sporociloNapaka}}</div>
+
+    <div *ngFor="let zadetek of zadetki">
+      <div *ngIf="zadetek.tip=='gradivo'" class="ena-vrstica-gradivo  col-sm-12 col-md-9 col-xl-9 text-center hoverNoLink">{{zadetek.ime}}</div>
+      <div *ngIf="zadetek.tip=='predmet'" routerLink="../predmeti/{{zadetek._id}}" class="ena-vrstica-predmet col-sm-12 col-md-9 col-xl-9 text-center hoverNoLink">{{zadetek.ime}}</div>
+      <div *ngIf="zadetek.tip=='osebje'" (click)=openOsebje(zadetek._id) class="ena-vrstica-osebje  col-sm-12 col-md-9 col-xl-9 text-center hoverNoLink">{{zadetek.ime_priimek}}</div>
+    </div>
+
+    <div class="m-3 col-sm-12 col-md-9 col-xl-9">
+      <ngb-pagination *ngIf="vseh > 10" class="" [collectionSize]="vseh" [(page)]="page" [ellipses]="false" [boundaryLinks]="true" (pageChange)="onPageChange(page)"></ngb-pagination>
+    </div>
+
+    <p *ngIf="zadetki?.length == 0">Za ta iskalni niz ni rezultatov</p>
+
+
+
+</main>

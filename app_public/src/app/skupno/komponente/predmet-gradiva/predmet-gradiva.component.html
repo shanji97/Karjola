@@ -1,0 +1,16 @@
+<div class="content bg-darkerBg p-3 mb-3">
+  <p class="h4">DOKUMENTI IN POVEZAVE</p>
+
+  <div *ngIf="!predmet.gradiva || predmet.gradiva.length == 0" class="pl-2 pt-3">
+      <p class="text-info">Predmet še nima objavljenega gradiva :(<br>Bodi car in ga dodaj!</p>
+  </div>
+  
+  <app-gradivo *ngFor="let gradivo of predmet.gradiva" [gradivo]="gradivo" (izbrisi)="izbrisiGradivo($event)"></app-gradivo>
+
+  <ng-container *ngIf="jePrijavljen">
+    <div class="content bg-default mt-5 p-3">
+      <p class="h4 black mx-3 text-center">Dodaj novo gradivo</p>
+    </div>
+    <app-gradivo-upload [predmet]="predmet" (nalozi)="naloziGradivo($event)"></app-gradivo-upload>
+  </ng-container>
+</div>

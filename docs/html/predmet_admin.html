@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <title>Karjola</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="../js/komentarForm.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <!-- Clicking on this should take you to home-->
+            <a class="navbar-brand mx-3 h1 mb-0 pr-5" href="#">
+                <span><b>Karjola</b></span>
+                <img src="./img/Logo.png" width="50" height="50" alt="">
+            </a>
+            <!-- Toggle navbar when screen gets too small-->
+            <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#toggleNavBar"></button>
+            <div class="collapse navbar-collapse" id="toggleNavBar">
+                
+                <!-- Search button-->
+                <div class="nav-item ml-auto my-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Išči gradivo">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="button">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dropdown-->
+                <div class="nav-item navbar-nav dropdown">
+                    <a class="nav-link fas fa-user fa-2x mx-3 d-flex justify-content-center" href="#" data-toggle="dropdown"></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <p class="dropdown-header text-info"><b>Uporabniško ime</b></p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./user_settings.html">Nastavitve</a>
+                        <a class="dropdown-item" href="./admin_management.html">Upravljanje vsebine</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#">Odjava</a>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+        <!--------------------------SIDEBAR-------------------------->
+        <div class="row m-0 mt-2">
+            <aside class="col-sm-12 col-md-12 col-lg-3 m-0 p-sm-0 px-md-2 mt-3">
+                <div class="content bg-dark p-3">
+                    <div class="menu-icon mb-1" data-toggle="collapse" data-target="#sidebarMenu">
+                        <span class="fas fa-bars"></span>
+                    </div>
+
+                    <div class="collapse show" id="sidebarMenu">
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1" 
+                                data-toggle="collapse" 
+                                data-target="#sidebarLetnik">
+                            Letniki
+                        </button> 
+                        <div id="sidebarLetnik" class="collapse show pl-2">
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1" 
+                                    data-toggle="collapse" 
+                                    data-target="#sidebarLetnik1">1. letnik</button>
+                            <div id="sidebarLetnik1" class="collapse show pl-2">
+                                <button class="dropdown-btn dropdown-lvl-3 btn btn-secondary mr-2 my-1"
+                                        data-toggle="collapse"
+                                        data-target="#sidebarSemester1">1. semester</button>
+                                <div id="sidebarSemester1" class="collapse pl-2">
+                                </div>
+
+                                <button class="dropdown-btn dropdown-lvl-3 btn btn-secondary mr-2 my-1"
+                                        data-toggle="collapse"
+                                        data-target="#sidebarSemester2">2. semester</button>
+                                <div id="sidebarSemester2" class="collapse show pl-2">
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Računalniške komunikacije</a>
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Linearna algebra</a>
+                                    <a class="dropdown-btn dropdown-link dropdown-lvl-4 btn btn-secondary mr-2 my-1" href="./predmet_admin.html">Osnove informacijskih sistemov</a>
+                                </div>
+                            </div>
+
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1"
+                                    data-toggle="collapse"
+                                    data-target="#sidebarLetnik2">2. letnik</button>
+                            <div id="sidebarLetnik2" class="collapse pl-2">
+                            </div>
+
+                            <button class="dropdown-btn dropdown-lvl-2 btn btn-secondary mr-2 my-1"
+                                    data-toggle="collapse"
+                                    data-target="#sidebarSemester1">3. letnik</button>
+                            <div id="sidebarLetnik3" class="collapse pl-2">
+                            </div>
+                        </div>
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Moduli
+                        </button> 
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Strokovni izbirni predmeti
+                        </button> 
+                        <button class="dropdown-btn dropdown-lvl-1 btn btn-secondary mr-2 my-1">
+                            Splošni izbirni predmeti
+                        </button> 
+
+                    </div>
+
+                    
+                </div>
+               
+            </aside>
+            <!--------------------------CONTENT-------------------------->
+            <main class="col-sm-12 col-md-12 col-lg-9 mt-3">
+                <div class="content bg-dark">
+                    <div class = "p-3">
+                        <!--naslov-->
+                       
+                        <p class="h3 p-3">SPLETNO PROGRAMIRANJE</p>
+                        <a href="predmet_settings.html">
+                            <button type="button" class ="btn btn-secondary ml-3">Uredi
+                                <i class="fa fa-edit d-inline p-3"></i>    
+                            </button>
+                        </a>
+        
+                        <!--vsebina-->
+                        <div class="content bg-darkerBg p-3 my-3">
+                            <p class="h4">VSEBINA</p>
+                            <p class = "mt-3">Pri predmetu se bomo posvetili pregledu nad tehnologijami, ki se uporabljajo pri delovanju spleta, spletnih strežnikov, brskalnikov in spletnih aplikacij.<br>
+                                Pregledali bomo osnove izdelave in oblikovanja spletnih strani (HTML5 in CSS3), jih nadgradili s pregledom tehnologij na strani odjemalca (JavaScript) in strežnika (Node.js) ter implementirali REST API dostop do podatkovne baze (MongoDB).<br>
+                                Cilj predmeta je študentu podati širino znanj, povezanih z delovanje raznovrstnih sodobnih spletnih tehnologij in razvojnih okolij in študenta usposobiti za samostojno učenje novih heterogenih tehnologij v razvoju ter ga predvsem seznaniti s celostnim razvojem spletnih aplikacij.
+                            </p>
+                        </div> 
+                        <!--izvajalci-->
+                        <div class="content bg-darkerBg p-3 mb-3">
+                            <p class="h4">IZVAJALCI</p>
+                            <p class = "mt-3">PROFESOR: doc. dr. Dejan Lavbič</p>
+                            <p>ASISTENT as. Sandi Gec</p>
+                        </div>
+                        <!--nastavitve--> 
+                        <div class="content bg-darkerBg p-3 mb-3">
+                            <p class="h4">NASTAVITVE PREDMETA</p>
+                            <p class = "mt-3">LETNIK: 3.</p>
+                            <p>SEMESTER: Zimski</p>
+                            <p>MODUL: Razvoj programske opreme</p>
+                            <p>TIP: Strokovni izbirni predmet</p>
+                        </div> 
+                        <!--dokumenti-->
+                        <div class="content bg-darkerBg p-3 mb-3">
+                            <p class="h4">DOKUMENTI IN POVEZAVE</p>
+
+                            <button type="button" class="btn predmet-btn dropdown-toggle my-2 pl-3">sp_skripta_1.pdf</button>
+
+                            <p class="px-3 text-danger">Št. Prijav: 0</p>
+
+                            <button type="button" class ="btn gradivoOptions ml-3">
+                                <i class="fa fa-eye-slash black d-inline mx-1 mt-1"></i>
+                            </button>
+                            <button type="button" class ="btn gradivoOptions ml-3">
+                                <i class="fa fa-trash-alt black d-inline mx-1 mt-1"></i>
+                            </button>
+                            <button type="button" class ="btn gradivoOptions ml-3">
+                                <i class="fa fa-download black d-inline mx-1 mt-1"></i>
+                            </button>
+                           
+                            <!--komentarji-->
+                            <div class= "mt-2 ml-3">
+                                <p>Komentarji</p>
+                                <div class="komentar text-dark">
+                                    <p class="h5 ml-3 d-inline">Janez Krstnik</p>
+                                    <p class="h6 ml-3">22/11/2020 ob 13:46</p>
+                                    <p class="p-3">To gradivo je za en drek!!!!!</p>
+                                    <button type="button" class ="btn btn-secondary mx-3">
+                                        <i class="fa fa-trash-alt mx-3"></i>
+                                    </button>
+                                    <p class="px-3 text-danger">Št. Prijav: 10</p>
+                                </div>
+                                <div class="komentar text-dark">
+                                    <p class="h5 ml-3 d-inline">Marko Potrč</p>
+                                    <p class="h6 ml-3">22/10/2020 ob 11:29</p>
+                                    <p class="p-3">Napaka na strani 24 v pdf-ju..Moralo bi pisati float-right in ne float-auto.</p>
+                                    <button type="button" class ="btn btn-secondary mx-3">
+                                        <i class="fa fa-trash-alt mx-3"></i>
+                                    </button>
+                                    <p class="px-3 text-danger">Št. Prijav: 0</p>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3 ml-3">
+                                <textarea class="komentar text-dark form-control" id="komentar" rows="3" placeholder="Vpiši svoj komentar"></textarea>
+                                <div class="form-check m-1">
+                                    <input type="checkbox" class="form-check-input" id="anonymousCheck">
+                                    <label class="form-check-label" for="anonymousCheck">Komentiraj anonimno</label>
+                                </div>
+                                <button type="button" id="submitComment" class="btn gradivoOptions my-2">ODDAJ KOMENTAR</button>
+                                <div class="alerts col-md-12">
+                                    <div class="alert alert-danger" id="commentEmpty" role="alert">
+                                        <strong>Praznega komentarja ne moreš oddati!</strong>
+                                    </div>
+                                    <div class="alert alert-success" id="commentSuccess" role="alert">
+                                        <strong>Komentar oddan</strong>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <button type="button"  class="btn predmet-btn dropdown-toggle my-2 pl-3">sp_pz_vprašanja.pdf</button>
+                            <button type="button"  class="btn predmet-btn dropdown-toggle my-2 pl-3">sp_kahoot_vprašanja.pdf</button>
+                            <button type="button"  class="btn predmet-btn dropdown-toggle my-2 pl-3">sp_izpiti_vprašanja.pdf</button>
+
+                            <!-- dodajanje gradiva -->
+                            <div class ="content bg-default mt-5 p-3">
+                                <p class="h4 black mx-3 text-center">Dodaj novo gradivo</p>
+                            </div>
+
+                            <p class="h4 m-3">Link</p>
+                            <div class="form-group mt-3 ml-3">
+                                <textarea class="form-control text-dark" id="link" rows="1" placeholder="Link do gradiva"></textarea>     
+                            </div>
+                            <p class="h4 m-3">Naloži datoteko</p>
+                            <div class="input-group mb-3 ">
+                                <div class="custom-file ml-3 ">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                    <label class="custom-file-label " for="inputGroupFile01">Izberi datoteko</label>
+                                </div>
+                            </div>
+
+                            <button class="gradivoOptions btn btn-block m-2">
+                                <i class="fa fa-upload black mt-2"></i>
+                            </button>
+                        </div> 
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

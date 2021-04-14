@@ -1,0 +1,166 @@
+{
+  "configVersion": 1,
+  "timestamp": 1609725790570,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.98b07cf39d094316a25c.js",
+        "/manifest.webmanifest",
+        "/polyfills.b3b05dce4f05c03b56a3.js",
+        "/runtime.0e49e2b53282f40c8925.js",
+        "/styles.3ff695c00d717f2d2a11.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/public/css/all.min.css",
+        "/assets/public/css/bootstrap.min.css",
+        "/assets/public/css/style.css",
+        "/assets/public/img/Logo.png",
+        "/assets/public/img/dejan_lavbic.jpg",
+        "/assets/public/img/person-icon.jpg",
+        "/assets/public/img/pogger.webp",
+        "/assets/public/js/Chart.min.js",
+        "/assets/public/js/admin_management.js",
+        "/assets/public/js/admin_prof_asistent_urejanje.js",
+        "/assets/public/js/bootstrap.bundle.min.js",
+        "/assets/public/js/bootstrap.bundle.min.js.map",
+        "/assets/public/js/chart.js",
+        "/assets/public/js/forms.js",
+        "/assets/public/js/jquery-3.5.1.min.js",
+        "/assets/public/js/komentarForm.js",
+        "/assets/public/js/predmetSettings.js",
+        "/assets/public/js/userSettings.js",
+        "/assets/public/webfonts/fa-brands-400.eot",
+        "/assets/public/webfonts/fa-brands-400.svg",
+        "/assets/public/webfonts/fa-brands-400.ttf",
+        "/assets/public/webfonts/fa-brands-400.woff",
+        "/assets/public/webfonts/fa-brands-400.woff2",
+        "/assets/public/webfonts/fa-regular-400.eot",
+        "/assets/public/webfonts/fa-regular-400.svg",
+        "/assets/public/webfonts/fa-regular-400.ttf",
+        "/assets/public/webfonts/fa-regular-400.woff",
+        "/assets/public/webfonts/fa-regular-400.woff2",
+        "/assets/public/webfonts/fa-solid-900.eot",
+        "/assets/public/webfonts/fa-solid-900.svg",
+        "/assets/public/webfonts/fa-solid-900.ttf",
+        "/assets/public/webfonts/fa-solid-900.woff",
+        "/assets/public/webfonts/fa-solid-900.woff2"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.gstatic\\.com\\/.*",
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "karjola-api",
+      "patterns": [
+        "http:\\/\\/localhost:3000\\/.*",
+        "https:\\/\\/sp-lp24-karjola\\.herokuapp\\.com\\/api\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 18000000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/public/css/all.min.css": "c508528feb9fd540454f838653cd4863b290df2e",
+    "/assets/public/css/bootstrap.min.css": "8ed2d6350d23f857d92805737d0f97c675de666b",
+    "/assets/public/css/style.css": "fe0275d73591e39bf7b7b6a384ea6298a5bea326",
+    "/assets/public/img/Logo.png": "406da6e9f3d8a0990c1258e2cec3314647d635bd",
+    "/assets/public/img/dejan_lavbic.jpg": "e35aba8389f6fd07f36f09a4627a518a5f6b5770",
+    "/assets/public/img/person-icon.jpg": "f445354c261808a65f27ae5b71c70b2443fb30e3",
+    "/assets/public/img/pogger.webp": "06fad6c7a21f5a1739d1448806a21a860106b2a8",
+    "/assets/public/js/Chart.min.js": "54b0ec6efb462351133a202a4daaaaeae3c50478",
+    "/assets/public/js/admin_management.js": "3552d0d7753d4ac2d0c8dcef339a3e5aff8ca0da",
+    "/assets/public/js/admin_prof_asistent_urejanje.js": "bb24e3a42424dcd244b9b5796bd84e45251b3668",
+    "/assets/public/js/bootstrap.bundle.min.js": "ab27031159724e2421f6ff5c70f48e657abe9d39",
+    "/assets/public/js/bootstrap.bundle.min.js.map": "9af4c77f5584ed4d6d4365e48cfa4f9c2764a469",
+    "/assets/public/js/chart.js": "de6462b5eca8b7d87c631c52fd479094c76563d9",
+    "/assets/public/js/forms.js": "93fc2ab9975decbdc6372f9e31f842a7d79ac847",
+    "/assets/public/js/jquery-3.5.1.min.js": "d2cc8d43ce1c854b1172e42b1209502ad563db83",
+    "/assets/public/js/komentarForm.js": "e0fda40d0a09e335772f091e4cfe4b2dfb068642",
+    "/assets/public/js/predmetSettings.js": "036d619af1884eacf61b833f6b1e365d4fb1ffb3",
+    "/assets/public/js/userSettings.js": "26cbe9713ebf14afc3f070aec9f94e8667241dec",
+    "/assets/public/webfonts/fa-brands-400.eot": "c719f4375679ee58e156434f9ba9727be669cf07",
+    "/assets/public/webfonts/fa-brands-400.svg": "69a0ff79a9d93a451e9fa90bd79ae7008d2a9da5",
+    "/assets/public/webfonts/fa-brands-400.ttf": "9b49c6c5b0cbdef158ae31b2a4e4814555408389",
+    "/assets/public/webfonts/fa-brands-400.woff": "a42ac4a94f4e0e9333cdb1b2fb6c13c0ae690ff2",
+    "/assets/public/webfonts/fa-brands-400.woff2": "f726c4275bb494a045fde059175f072de06c01df",
+    "/assets/public/webfonts/fa-regular-400.eot": "2baa9a8aa68f1d2d4712b3c7205f9105aaf21879",
+    "/assets/public/webfonts/fa-regular-400.svg": "c41a688158d577e3a2738137992d49b05b17ab8f",
+    "/assets/public/webfonts/fa-regular-400.ttf": "d64e58981a419de52bac110c979887d34e366135",
+    "/assets/public/webfonts/fa-regular-400.woff": "26afc29d39ab9fac6d0b607be7e76db093ff7c3a",
+    "/assets/public/webfonts/fa-regular-400.woff2": "fb9648469530a05fa9aac80e47d4d6960472a242",
+    "/assets/public/webfonts/fa-solid-900.eot": "c39b89f7fa7b66931ab02a54002db5ffcbff206c",
+    "/assets/public/webfonts/fa-solid-900.svg": "36de6a298660ed3feaab37900f7b28c3e981d80e",
+    "/assets/public/webfonts/fa-solid-900.ttf": "d537bf4cc7273ddb3fd754d53f2b241aeafaefe7",
+    "/assets/public/webfonts/fa-solid-900.woff": "3b86a0ce15d8d534b65e98560e321a933d310688",
+    "/assets/public/webfonts/fa-solid-900.woff2": "9b592048b9062b00f0b2dd782d70a95b7dc69b83",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "df51004a7e1d0541ca90ed1d4fa2af87195aee79",
+    "/main.98b07cf39d094316a25c.js": "960470c1d0ed0a12f85d80da130f179d5242f09c",
+    "/manifest.webmanifest": "6df04eefc2623815eb91967e4b33427559c7a51f",
+    "/polyfills.b3b05dce4f05c03b56a3.js": "0d003992512d28c544b0a972ce2ae6b28ebbf5f6",
+    "/runtime.0e49e2b53282f40c8925.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.3ff695c00d717f2d2a11.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

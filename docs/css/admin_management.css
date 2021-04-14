@@ -1,0 +1,60 @@
+.container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.naslov-sekcije {
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: #353535;
+    border-radius: 10px;
+}
+
+.ena-vrstica{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #b2d39c;
+    color: black;
+    border-radius: 10px;
+}
+
+.btn-dodaj {
+    margin-top: 10px;
+}
+
+.form-prof-asist, .form-predmeti, .form-moduli {
+    margin-top: 30px;
+}
+
+.btn-objavi {
+    margin-top: 10px;
+}
+
+.section-predmeti {
+    margin-top: 70px;
+}
+
+.section-moduli {
+    margin-top: 70px;
+}
+
+input{
+    color: white !important;
+}
+
+#form-prof-asist-show-hide {
+    display: none;
+}
+
+#form-predmeti-show-hide {
+    display: none;
+}
+
+#form-moduli-show-hide {
+    display: none;
+}
+
+a {
+    color: black;
+}

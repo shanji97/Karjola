@@ -1,0 +1,49 @@
+[
+    {
+        "_id":"5ff07a5d8ba53a0fb8ecb8cf",
+        "zetonZaObnavljanjeGesla":"171f23360f86d42b113a1c499314d642620436e012371d2df67460e7a70fcc962d04130b6be762fbe1912407c7b504680f78ccab8c1795446414557f85ff431e",
+        "jeAdmin":true,
+        "kraj":"Ljubljana",
+        "posta":1000,
+        "uporabniskoIme":"Admin",
+        "ePosta":"ad1234@student.uni-lj.si",
+        "nakljucnaVrednost":"838f5cc229586ee9a519e1b111b05933",
+        "zgoscenaVrednost":"37b47b72c19fa816a0e30a827430c0b1304db162630a566a24ad71d12336749e301d6dabe1967f9e5b595f80603defc298496c7a24332af346d1cd5ee421296c",
+        "naslov":"Adminov naslov"
+    },
+    {
+        "_id": "5ff07b748ba53a0fb8ecb8d0",
+        "zetonZaObnavljanjeGesla":"6977a60eff88589929f855387de99a724e5eee5a83b7510eb226d3834ac17609c2f4313f89daaac350e608c392867ec2a3e5d8adebb2fd1201c867a9aa4c6bc5",
+        "jeAdmin":false,
+        "kraj":"Medvode",
+        "posta":1215,
+        "uporabniskoIme":"Uporabnik",
+        "ePosta":"nu1234@student.uni-lj.si",
+        "nakljucnaVrednost":"44ccecfd3a654841926a0fa2c57ff62b",
+        "zgoscenaVrednost":"7e43924f25ac1f9f01774de3517e7ce0dff6f41bc03715dfefa2da53640a911043954b84f978bed6463e83b2efde0a4c54e09290403ee755ca62fa3c00adf959",
+        "naslov":"Uporabnikov naslov"
+    },
+    {
+        "_id": "5ff259bbd5981a236803812b",
+        "zetonZaObnavljanjeGesla": "d6b464c34c517d4ba9136f2fcfbc17fd42534e5ac829ab50dac6544f7edeb249108bd83e38badecfa6bc2895ea681e336999d66e9d2bc6d638c3866462d85eaf",
+        "jeAdmin": false,
+        "kraj": "Moravče",
+        "posta": 1251,
+        "uporabniskoIme": "Moravčar",
+        "ePosta": "mr1234@student.uni-lj.si",
+        "nakljucnaVrednost": "343a0a91ac342be9b68c8fb14615d9a8",
+        "zgoscenaVrednost": "4c9e9c1dfcd6a6199634922729fd692faeee9fa36bb7074050ea30f8fff17b272ca6df75d24fc6cb8029916996949d7a6b9015cf74d337acc343295346353243",
+        "naslov": "Moravče 5/C"
+      },{
+        "_id": "5ff25a0ad5981a236803812c",
+        "zetonZaObnavljanjeGesla": "8e03275387fa2abca8fcb1a17c3864cabeb5ae5d7b7388d5094f595c8628f9db3f83bb7b9ecf0409e2892c978160f40196996837c31bec3404f38eec2800a92e",
+        "jeAdmin": false,
+        "kraj": "Ljubljana",
+        "posta": 1000,
+        "uporabniskoIme": "Žabar",
+        "ePosta": "lj1234@student.uni-lj.si",
+        "nakljucnaVrednost": "02cf184f3c128cf3b19076a23c6082b8",
+        "zgoscenaVrednost": "e4d21146d24f7abb7b342aa05a3bcc79cef9258d98f5bd8a0a3f1cd75e496c960b274aeef6b1b17b76f55b0640cde83ab3b621b5395ebdc663369d2a8e843020",
+        "naslov": "Zvezda park"
+      }
+]

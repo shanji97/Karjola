@@ -1,0 +1,180 @@
+[
+    {
+        "_id": "5fbd02fc05e8d932232dc687",
+        "ime":"Programiranje 2",
+        "opis":"Did not C you there",
+        "letnik":1,
+        "semester":2,
+        "profesorji": [
+            "5fbd8d7205e8d932232dd2d9"
+        ],
+        "asistenti": [
+            "5fbd8d7205e8d932232dd2d8",
+            "5fbd8d7205e8d932232dd2dc"
+        ]
+    },
+    {
+        "_id": "5fbd02fc05e8d932232dc688",
+        "ime":"Osnove podatkovnih baz",
+        "opis":"Relacijska algebra in SQL",
+        "letnik":2,
+        "semester":1,
+        "profesorji": [],
+        "asistenti": []
+    },
+    {
+        "_id": "5fbd02fc05e8d932232dc689",
+        "ime":"Spletno programiranje",
+        "opis":"JavaScript.",
+        "semester":1,
+        "vrstaIzbirnega":2,
+        "moduli": [
+            "5fbb135c6c1aa9589746781b"
+        ],
+        "profesorji": [
+            "5fbd8d7205e8d932232dd2dd"
+        ],
+        "asistenti": [
+            "5fbd8d7205e8d932232dd2db"
+        ]
+    },
+    {
+        "_id": "5fbd02fc05e8d932232dc68a",
+        "ime":"Programiranje 1",
+        "opis":"Java in Fuerst",
+        "letnik":1,
+        "semester":1,
+        "profesorji": [
+            "5fbd8d7205e8d932232dd2d8"
+        ],
+        "asistenti": [
+            "5fbd8d7205e8d932232dd2dc"
+        ]
+    },
+    {
+        "_id": "5fbd02fc05e8d932232dc68b",
+        "ime":"Računalniške komunikacije",
+        "opis":"TCP/IP n stuff",
+        "letnik":1,
+        "semester":2,
+        "vrstaIzbirnega":0,
+        "profesorji": [
+            "5fbd8d7205e8d932232dd2df"
+        ],
+        "asistenti": [
+            "5fbd8d7205e8d932232dd2da"
+        ]
+    },
+    {
+        "_id": "5ff23f9537a01423a461e557",
+        "profesorji": ["5ff23f6a37a01423a461e556"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Algoritmi in Podatkovne Strukture 1",
+        "letnik": 2,
+        "opis": "Programiranje na papir gets u everytime",
+        "semester": 1,
+        "vrstaIzbirnega": 0
+      },
+      {
+        "_id": "5ff23fee37a01423a461e559",
+        "profesorji": ["5ff23fd437a01423a461e558"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Algoritmi in Podatkovne Strukture 2",
+        "letnik": 2,
+        "opis": "Kinda fun kinda not ngl",
+        "semester": 2,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff24feecd1e5429dc82c47b",
+        "profesorji": [ "5ff23d4437a01423a461e552" ],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Osnove Podatkovnih Baz",
+        "letnik": 2,
+        "opis": "Ayy lmao",
+        "semester": 1,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff25007cd1e5429dc82c47c",
+        "profesorji": ["5ff23d4437a01423a461e552"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Diplomski Seminar",
+        "letnik": 3,
+        "opis": "Ojoj katastrofa",
+        "semester": 2,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff2504bcd1e5429dc82c47d",
+        "profesorji": ["5fbd8d7205e8d932232dd2db"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Tehnologija Programske Opreme",
+        "letnik": 3,
+        "opis": "dawdada",
+        "semester": 1,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff25177cd1e5429dc82c47f",
+        "profesorji": ["5ff250d2cd1e5429dc82c47e"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Organizacija in Management",
+        "letnik": 3,
+        "opis": "How money works",
+        "semester": 2,
+        "vrstaIzbirnega": 1
+      },{
+        "_id": "5ff251b8cd1e5429dc82c480",
+        "profesorji": ["5ff23fd437a01423a461e558"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Operacijski Sistemi",
+        "letnik": 2,
+        "opis": "Bash and C baby",
+        "semester": 2,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff2525ecd1e5429dc82c481",
+        "profesorji": ["5ff23e4a37a01423a461e553"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Osnove Verjetnosti in Statistike",
+        "letnik": 2,
+        "opis": "Rough times",
+        "semester": 1,
+        "vrstaIzbirnega": 0
+      },{
+        "_id": "5ff252c2cd1e5429dc82c482",
+        "profesorji": ["5ff23ed237a01423a461e555"],
+        "asistenti": [],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "RGTI",
+        "letnik": 3,
+        "opis": "Making games",
+        "semester": 1,
+        "vrstaIzbirnega": 2
+      },{
+        "_id": "5ff252decd1e5429dc82c483",
+        "profesorji": ["5fbd8d7205e8d932232dd2df"],
+        "asistenti": ["5fbd8d7205e8d932232dd2da"],
+        "moduli": [],
+        "gradiva": [],
+        "ime": "Računalniške Komunikacije",
+        "letnik": 1,
+        "opis": "How internet works",
+        "semester": 1,
+        "vrstaIzbirnega": 0
+      }
+]

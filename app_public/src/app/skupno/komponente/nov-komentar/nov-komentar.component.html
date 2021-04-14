@@ -1,0 +1,14 @@
+<div class="form-group mt-3 ml-3">
+  <textarea [(ngModel)]="komentar.komentar" (input)="posodobiBesedilo($event.target.value)" class="komentar text-dark form-control" rows="3" placeholder="Vpiši svoj komentar"></textarea>
+  <div class="form-check m-1">
+    <input [(ngModel)]="komentar.anonimno" type="checkbox" class="form-check-input">
+    <label class="form-check-label" for="anonimno">Komentiraj anonimno</label>
+  </div>
+  <button (click)="objaviKomentar()" class="btn gradivoOptions my-2">ODDAJ KOMENTAR</button>
+  <div *ngIf="prazenKomentar" class="alerts col-md-12 d-block">
+    <div class="alert alert-danger" role="alert">
+      <strong>Praznega komentarja ne moreš oddati!</strong>
+    </div>
+  </div>  
+</div>
+  

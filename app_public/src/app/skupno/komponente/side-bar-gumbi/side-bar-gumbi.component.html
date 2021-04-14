@@ -1,0 +1,8 @@
+<a *ngIf="data.final" class="dropdown-btn dropdown-lvl-4 btn btn-secondary mr-2 my-1" routerLink="/predmeti/{{data.id}}">{{data.naziv}}</a>
+
+<span *ngIf="data.fields.length > 0">
+    <button class="dropdown-btn dropdown-lvl-{{level}} btn btn-secondary mr-2 my-1" (click)="prikaziPodmeni=!prikaziPodmeni">{{data.naziv}}</button>
+    <span *ngIf="prikaziPodmeni">
+        <app-side-bar-gumbi *ngFor="let entry of data.fields" [data]="entry" [level]="level+1" ngClass="ml-{{level}} mr-{{level}}"></app-side-bar-gumbi>
+    </span>
+</span>

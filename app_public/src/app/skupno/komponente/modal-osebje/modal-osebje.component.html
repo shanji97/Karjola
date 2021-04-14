@@ -1,0 +1,153 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ modalTitle }}</h4>
+  <button type="button" class="close text-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div>
+  <div class="form-moduli">
+    <div class="form-group col-12">
+      <!-- KREIRANJE NOVE OSEBE -->
+      <div *ngIf="new">
+        <div class="form-prof-asist">
+          <div class="form-group col-12">
+            <label for="formAkademskiNazivInput">AKADEMSKI NAZIV</label>
+            <select [(ngModel)]="novoOsebje.akademskiNaziv" class="form-control" id="formAkademskiNazivInput"
+                    name="akademskiNaziv" [disabled]="!jePovezava()">
+              <option *ngFor="let naziv of akademskiNazivi" [ngValue]="naziv">{{naziv}}</option>
+            </select>
+          </div>
+          <div class="form-group col-12">
+            <label for="formIzobrazbaCustomInput">IZOBRAZBA</label>
+            <input [(ngModel)]="novoOsebje.izobrazba" type="text" class="form-control" id="formIzobrazbaCustomInput"
+                   name="izobrazba" placeholder="npr. dipl. inž. rač. mat." [disabled]="!jePovezava()">
+          </div>
+          <div class="form-group col-12">
+            <label for="formImeInPriimekInput">IME IN PRIIMEK</label>
+            <input [(ngModel)]="novoOsebje.ime_priimek" type="text" class="form-control" id="formImeInPriimekInput"
+                   name="ime_priimek" placeholder="Ime Priimek" [disabled]="!jePovezava()">
+          </div>
+          <div class="form-group col-12">
+            <label>E-MAIL</label>
+            <input [(ngModel)]="novoOsebje.e_mail" type="text" class="form-control" placeholder="ime.priimek@fri.uni-lj.si">
+          </div>
+          <div class="form-group col-12">
+            <label for="formOpis">OPIS</label>
+            <textarea [(ngModel)]="novoOsebje.opis" class="form-control" id="formOpis" name="opis" rows="4"
+                      placeholder="Kratek opis izobrazbe, dela, področij raziskovanja."></textarea>
+          </div>
+          <!-- BUTTONS -->
+          <div class="d-flex">
+          <span class="flex-fill mr-3"><button type="submit" (click)="izvediAkcijo(modalTitle)"
+                                               class="btn btn-primary btn-block my-3" [disabled]="!jePovezava()">{{ submitButton }}</button></span>
+            <span class=" flex-fill"><button type="button" class="btn btn-danger btn-block my-3"
+                                             (click)="activeModal.dismiss('Prekliči click')"
+                                             ngbAutofocus [disabled]="!jePovezava()">Prekliči</button></span>
+          </div>
+        </div>
+        <!-- ALERTS -->
+        <div *ngIf="formWarning">
+          <div style="margin-top:10px" class="alert alert-warning alert-dismissible fade show" role="alert">
+            Izpolniti je potrebno vsa polja.
+            <button type="button" class="close" (click)="formWarning=false" [disabled]="!jePovezava()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="formSuccess">
+          <div style="margin-top:10px" class="alert alert-success alert-dismissible fade show" role="alert">
+            Dodajanje je bilo uspešno!
+            <button type="button" class="close" (click)="formSuccess=false" [disabled]="!jePovezava()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSODABLJANJE OSEBE -->
+    <div *ngIf="update" class="form-group col-12">
+      <div class="form-prof-asist">
+        <div class="form-group col-12">
+          <label for="formAkademskiNazivInput">AKADEMSKI NAZIV</label>
+          <select [(ngModel)]="inputOseba.akademskiNaziv" class="form-control"
+                  name="akademskiNaziv" [disabled]="!jePovezava()">
+            <option *ngFor="let naziv of akademskiNazivi" [ngValue]="naziv">{{naziv}}</option>
+          </select>
+        </div>
+        <div class="form-group col-12">
+          <label for="formIzobrazbaCustomInput">IZOBRAZBA</label>
+          <input [(ngModel)]="inputOseba.izobrazba" type="text" class="form-control"
+                 name="izobrazba" placeholder="npr. dipl. inž. rač. mat." [disabled]="!jePovezava()">
+        </div>
+        <div class="form-group col-12">
+          <label for="formImeInPriimekInput">IME IN PRIIMEK</label>
+          <input [(ngModel)]="inputOseba.ime_priimek" type="text" class="form-control"
+                 name="ime_priimek" placeholder="Ime Priimek" [disabled]="!jePovezava()">
+        </div>
+        <div class="form-group col-12">
+          <label>E-MAIL</label>
+          <input [(ngModel)]="inputOseba.e_mail" type="text" class="form-control" placeholder="ime.priimek@fri.uni-lj.si" [disabled]="!jePovezava()">
+        </div>
+        <div class="form-group col-12">
+          <label for="formOpis">OPIS</label>
+          <textarea [(ngModel)]="inputOseba.opis" class="form-control" name="opis" rows="4"
+                    placeholder="Kratek opis izobrazbe, dela, področij raziskovanja."></textarea>
+        </div>
+        <!-- BUTTONS -->
+        <div class="d-flex">
+          <span class="flex-fill mr-3"><button type="submit" (click)="izvediAkcijo(modalTitle)"
+                                               class="btn btn-primary btn-block my-3">{{ submitButton }}</button></span>
+          <span class=" flex-fill"><button type="button" class="btn btn-danger btn-block my-3"
+                                           (click)="activeModal.dismiss('Prekliči click')"
+                                           ngbAutofocus>Prekliči</button></span>
+        </div>
+        <!-- ALERTS -->
+        <div *ngIf="formWarningUpdate">
+          <div style="margin-top:10px" class="alert alert-warning alert-dismissible fade show" role="alert">
+            Izpolniti je potrebno vsa polja.
+            <button type="button" class="close" (click)="formWarning=false" [disabled]="!jePovezava()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="formSuccessUpdate">
+          <div style="margin-top:10px" class="alert alert-success alert-dismissible fade show" role="alert">
+            Oseba je uspešno posodobljena!
+            <button type="button" class="close" (click)="formSuccess=false" [disabled]="!jePovezava()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRISANJE OSEBE -->
+    <div *ngIf="delete">
+      <div class="form-group col-12">
+        <p>Oseba <b>{{inputOseba.ime_priimek}}</b> bo izbrisana.</p>
+        <p>Želite nadaljevati?</p>
+        <!-- BUTTONS -->
+        <div class="d-flex">
+          <span class="flex-fill mr-3"><button type="submit" (click)="izvediAkcijo(modalTitle)"
+                                               class="btn btn-primary btn-block my-3" [disabled]="!jePovezava()">{{ submitButton }}</button></span>
+          <span class=" flex-fill"><button type="button" class="btn btn-danger btn-block my-3"
+                                           (click)="activeModal.dismiss('Prekliči click')"
+                                           ngbAutofocus [disabled]="!jePovezava()">Prekliči</button></span>
+        </div>
+        <!-- ALERTS -->
+        <div *ngIf="formSuccess">
+          <div style="margin-top:10px" class="alert alert-success alert-dismissible fade show" role="alert">
+            Brisanje je bilo uspešno!
+            <button type="button" class="close" (click)="formSuccess=false" [disabled]="!jePovezava()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

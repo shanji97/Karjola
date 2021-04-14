@@ -1,0 +1,38 @@
+version: '3.5'
+
+
+services:
+
+  node-api:
+    container_name: lp24-karjola
+    restart: always
+    ports:
+      - "3000:3000"
+    image: lp24-karjola-node-js
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - MONGODB_CLOUD_URI=mongodb://mongo-db/karjola
+    command: npm start
+    networks:
+      - sp-network
+    depends_on:
+      - mongo-db
+
+  mongo-db:
+    image: mongo:4.2
+    container_name: karjola-mongodb
+    ports:
+      - "27017-27019:27017-27019"
+    networks:
+      - sp-network
+
+networks:
+
+  sp-network:
+    name: sp-network
+    driver: bridge

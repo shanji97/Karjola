@@ -1,0 +1,115 @@
+[
+    {
+        "_id": "5fbd8d7205e8d932232dd2d8",
+        "ime_priimek":"Luka Fuerst",
+        "akademskiNaziv":"docent",
+        "opis":"Profesor pri Programiranju 1",
+        "e_mail":"luka.fuerst@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2d9",
+        "ime_priimek":"Boštjan Slivnik",
+        "akademskiNaziv":"docent",
+        "opis":"Profesor pri Programiranju 2 in Prevajalnikih",
+        "e_mail":"bostjan.slivnik@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2da",
+        "ime_priimek":"Matjaž Pančur",
+        "akademskiNaziv":"asistent",
+        "opis":"Asistent pri Računalniških komunikacijah",
+        "e_mail":"matjaz.pancur@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2db",
+        "ime_priimek":"Sandi Gec",
+        "akademskiNaziv":"asistent",
+        "opis":"Profesor pri Spletnem programiranju in Osnovah informacijskih sistemov",
+        "e_mail":"sandi.gec@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2dc",
+        "ime_priimek":"Marko Poženel",
+        "akademskiNaziv":"asistent",
+        "opis":"Asistent pri Programiranju 1 in 2",
+        "e_mail": "marko.pozenel@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2dd",
+        "ime_priimek":"Dejan Lavbič",
+        "akademskiNaziv":"docent",
+        "opis":"Profesor pri Spletnem programiranju in Osnovah informacijskih sistemov",
+        "e_mail":"dejan.lavbic@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2de",
+        "ime_priimek":"Gašper Fele-Žorž",
+        "akademskiNaziv":"asistent",
+        "opis":"Vodja Računalniškega centra",
+        "e_mail":"gasper.fele-zorz@fri.uni-lj.si"
+    },
+    {
+        "_id": "5fbd8d7205e8d932232dd2df",
+        "ime_priimek":"Zoran Bosnič",
+        "akademskiNaziv":"profesor",
+        "opis":"Profesor pri Računalniških komunikacijah",
+        "e_mail":"zoran.bosnic@fri.uni-lj.si"
+    },
+    {
+        "_id": "5ff23d4437a01423a461e552",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "dipl. inž",
+        "ime_priimek": "Aleš Jaklič",
+        "e_mail": "aleš.jaklič@mail.fri",
+        "opis": "I dont know this guy"
+      },{
+        "_id": "5ff23e4a37a01423a461e553",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Aleksandar Jurišić",
+        "e_mail": "aleksandarjkurišić@mail.fri",
+        "opis": "Statistika guy"
+      },{
+        "_id": "5ff23e7d37a01423a461e554",
+        "akademskiNaziv": "asistent",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Gregor Jerše",
+        "e_mail": "gregorjerše@mail.fri",
+        "opis": "Vcasih je pico med izpiti. Legenda"
+      },{
+        "_id": "5ff23ed237a01423a461e555",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Uroš Lotrič",
+        "e_mail": "uroš.lotrič@mail.fri",
+        "opis": "TIS guy, chill "
+      },{
+        "_id": "5ff23f6a37a01423a461e556",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Igor Kononenko",
+        "e_mail": "igor.kononenko@mail.fri",
+        "opis": "I dont know what to think anymore after my spiritual awakening"
+      },{
+        "_id": "5ff23fd437a01423a461e558",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Borut Robič",
+        "e_mail": "borut.robič@mail.fri",
+        "opis": "Profesor pri IRZ(kill me) in APS2 in OS"
+      },{
+        "_id": "5ff250d2cd1e5429dc82c47e",
+        "akademskiNaziv": "profesor",
+        "izobrazba": "doc. dr.",
+        "ime_priimek": "Tomaž Hovelja",
+        "e_mail": "tomaž.hovelja@mail.fri",
+        "opis": "Res car, zanimiva predavanja"
+      },{
+        "_id": "5ff25365cd1e5429dc82c485",
+        "akademskiNaziv": "asistent",
+        "izobrazba": "mag.",
+        "ime_priimek": "Žiga Lesar",
+        "e_mail": "žiga.lesar@mail.fri",
+        "opis": "Rubix cube guy"
+      }
+]

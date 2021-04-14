@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sl">
+    <head>
+        <title>Karjola</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="../js/predmetSettings.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <!-- Clicking on this should take you to home-->
+            <a class="navbar-brand mx-3 h1 mb-0 pr-5" href="#">
+                <span><b>Karjola</b></span>
+                <img src="./img/Logo.png" width="50" height="50" alt="">
+            </a>
+            <!-- Toggle navbar when screen gets too small-->
+            <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#toggleNavBar"></button>
+            <div class="collapse navbar-collapse" id="toggleNavBar">
+                
+                <!-- Search button-->
+                <div class="nav-item ml-auto my-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Išči gradivo">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="button">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dropdown-->
+                <div class="nav-item navbar-nav dropdown">
+                    <a class="nav-link fas fa-user fa-2x mx-3 d-flex justify-content-center" href="#" data-toggle="dropdown"></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <p class="dropdown-header text-info"><b>Uporabniško ime</b></p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./user_settings.html">Nastavitve</a>
+                        <a class="dropdown-item" href="./admin_management.html">Upravljanje vsebine</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#">Odjava</a>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+        
+        <!--------------------------CONTENT-------------------------->
+        <main class="container mt-3">
+            <div class="content bg-dark">
+                <div class = "p-3">
+                    <p class="h3 p-3">UREJANJE PREDMETA</p>
+
+                    <div class="form-row col-md-12">
+                        <!-- ime predmeta -->
+                        <div class="form-group col-md-6">
+                            <label for="imePredmeta">Ime Predmeta</label>
+                            <input id="predmetNameInput" type="email" class="form-control" id="imePredmeta" value="Spletno Programiranje">
+                        </div>
+                        <br/>
+                        <!-- letnik -->
+                        <div class="form-group col-md-3">
+                            <label for="izberiLetnik">Letnik</label>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle btn-block"  type="button"  id="izberiLetnik" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Izberi letnik</button>
+                                <ul id="letnikDropdown" class="dropdown-menu btn-block">
+                                    <li><a class="dropdown-item" href="#">1.</a></li>
+                                    <li><a class="dropdown-item" href="#">2.</a></li>
+                                    <li><a class="dropdown-item" href="#">3.</a></li>
+                                    <li><a class="dropdown-item" href="#">Predmet ne spada v letnik.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="izberiTip">Tip</label>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="izberiTip" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Izberi tip</button>
+                                <ul id="tipDropdown" class="dropdown-menu btn-block">
+                                    <li><a class="dropdown-item" href="#">Strokovni izbirni predmet</a></li>
+                                    <li><a class="dropdown-item" href="#">Splošni izbirni predmet</a></li>
+                                    <li><a class="dropdown-item" href="#">Ni izbirni predmet.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="izberiProf" class="ml-3">Profesor/ji</label>
+                    <div class="input-group form-group ml-3">
+                        <input list="osebje" placeholder="Osebje" oninput="dodajProf()" id="profDropdown">
+                        <datalist id="osebje">
+                            <option value="doc. dr. Dejan Lavbič">
+                            <option value="as. Sandi Gec">
+                            <option value="Matija Marolt">
+                            <option value="Zoran Bosnić">
+                            <option value="Narvika Bovcon">
+                        </datalist>
+                        <div>
+                            <button id="deleteProf" class="btn btn-danger">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="btn-block mt-1 mr-5">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" id="profInput" value="doc. dr. Dejan Lavbič; " readonly>
+                        </div>
+                    </div>
+
+                    <label for="izberiAsistent" class="ml-3">Asistent/i</label>
+                    <div class="input-group form-group ml-3">
+                        <input list="osebje" placeholder="Osebje" oninput="dodajAsistent()" id="asistentDropdown">
+                        <datalist id="osebje">
+                            <option value="doc. dr. Dejan Lavbič">
+                            <option value="as. Sandi Gec">
+                            <option value="Matija Marolt">
+                            <option value="Zoran Bosnić">
+                            <option value="Narvika Bovcon">
+                        </datalist>
+                        <div>
+                            <button id="deleteAsistent" class="btn btn-danger">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>               
+                        <div class="btn-block mt-1 mr-5">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" id="asistentInput" value="as. Sandi Gec; " readonly>
+                        </div>
+                    </div>
+
+                    <label for="izberiModul" class="ml-3">Modul/i</label>
+                    <div class="input-group form-group ml-3">
+                        <input list="moduli" placeholder="Moduli" oninput="dodajModul()" id="modulDropdown">
+                        <datalist id="moduli">
+                            <option value="Razvoj Programske Opreme">
+                            <option value="Informacijski Sistemi">
+                            <option value="Multimedijske Vsebine">
+                        </datalist>
+                        <div>
+                            <button id="deleteModul" class="btn btn-danger">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="btn-block mt-1 mr-5">
+                            <input id="modulInput" type="text" class="form-control" aria-label="Text input with dropdown button" id="izberiModul" value="Razvoj Programske Opreme; " readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group ml-3 mr-4">
+                        <label for="exampleFormControlTextarea1">Opis predmeta</label>
+                        <textarea class="form-control" id="descInput" rows="5">Pri predmetu se bomo posvetili pregledu nad tehnologijami, ki se uporabljajo pri delovanju spleta, spletnih strežnikov, brskalnikov in spletnih aplikacij. Pregledali bomo osnove izdelave in oblikovanja spletnih strani (HTML5 in CSS3), jih nadgradili s pregledom tehnologij na strani odjemalca (JavaScript) in strežnika (Node.js) ter implementirali REST API dostop do podatkovne baze (MongoDB). Cilj predmeta je študentu podati širino znanj, povezanih z delovanje raznovrstnih sodobnih spletnih tehnologij in razvojnih okolij in študenta usposobiti za samostojno učenje novih heterogenih tehnologij v razvoju ter ga predvsem seznaniti s celostnim razvojem spletnih aplikacij.</textarea>
+                    </div>
+                    <div class="form-group ml-3 mr-4">
+                        <button id="shraniSpremembe" type="button" class="btn btn-success btn-block">Shrani</button>
+
+                    </div>
+                    <div class="form-group ml-3 mr-4">
+                        <button id="izbrisiPredmet"type="button" class="btn btn-danger btn-block">Izbriši predmet</button>
+                    </div>
+                    <!-- Input validation alerts-->
+                    <div class="alerts col-md-12">
+                        <div class="alert alert-danger" id="emptyNameAlert" role="alert">
+                            <span>Ime predmeta ne sme biti prazno.</span>
+                        </div>
+                        <div class="alert alert-danger" id="emptyProfAlert" role="alert">
+                            <span>Predmet mora imeti vsaj enega profesorja.</span>
+                        </div>
+                        <div class="alert alert-danger" id="emptyDescAlert" role="alert">
+                            <span>Opis predmeta ne sme biti prazen.</span>
+                        </div>
+                        <div class="alert alert-success" id="successAlert" role="alert">
+                            <span>Predmet posodobljen!</span>
+                        </div>
+                    </div>  
+                    
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

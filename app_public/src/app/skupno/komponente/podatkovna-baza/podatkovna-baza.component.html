@@ -1,0 +1,28 @@
+<div class="content bg-dark p-3">
+  <div class="content p-3">
+    <h2 class="formtitle">Vnos začetnih podatkov</h2>
+    <br />
+    <div class="alert alert-info" role="alert" *ngIf="!jeAdmin()">
+      Brisanje baze je na voljo le administratorju.
+    </div>
+    <div class="alert alert-info" role="alert" *ngIf="!jePovezava()">
+      Ni niti ni povezave, da bi kaj smiselnega naredil. :D
+    </div>
+    <form (submit)="vnesiPodatke()" *ngIf="jeVnosViden && jePovezava()">
+      <button type="submit" id="izbris" class="btn btn-success pb" [disabled]="!jePovezava()">Vnos začetnih podatkov</button>
+    </form>
+    <br />
+    <br />
+    <form (submit)="izbrisiPodatke()" *ngIf="jeAdmin() && jeIzbrisViden && jePovezava()">
+      <button type="submit" id="izbris" class="btn btn-danger pb" [disabled]="!jePovezava()">Izbris vsebine podatkovne baze</button>
+    </form>
+    <br>
+    <div class="alert alert-danger" role="alert" *ngIf="napakaNaObrazcu">
+      {{napakaNaObrazcu}}
+    </div>
+    <br>
+    <div class="alert alert-success" role="alert" *ngIf="uspesnoObvestilo">
+      Operacija uspešno narejena! 
+    </div> 
+  </div>
+</div>

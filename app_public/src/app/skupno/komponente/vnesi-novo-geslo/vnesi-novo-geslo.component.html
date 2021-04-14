@@ -1,0 +1,39 @@
+<div class="content bg-dark p-3">
+  <h2 class="formtitle">VNOS NOVEGA GESLA</h2>
+  <br/>
+  <form (submit)="posljiPodatke()">
+    <div class="form-row col-sm-12 col-md-12 col-lg-12">
+      <div class="form-group col-md-6 col-lg-12">
+        <label for="exampleInputPassword1">ŽETON <em class="required">*</em></label>
+        <input type="text" class="form-control" id="InputPassword" placeholder="Zeton poslan na mail"
+               [(ngModel)]="noviPodatki.zetonZaPosodobitev" name="zeton" [disabled]="!jePovezava()" required>
+      </div><!-- Odstranimo po koncu, passamo kot  -->
+      <div class="form-group col-md-6 col-lg-12">
+        <label for="exampleInputPassword1">NOVO GESLO <em class="required">*</em></label>
+        <input type="password" class="form-control" id="InputPassword" placeholder="Geslo" name="novoGeslo"
+               [(ngModel)]="noviPodatki.novoGeslo" [disabled]="!jePovezava()"
+               required>
+      </div>
+      <div class="form-group col-md-6 col-lg-12">
+        <label for="repeatPassword">POTRDI GESLO <em class="required">*</em></label>
+        <input type="password" class="form-control" id="repeatPassword" placeholder="Ponovi geslo"
+               [(ngModel)]="noviPodatki.ponoviNovoGeslo"
+               name="potrdiNovoGeslo" [disabled]="!jePovezava()" required>
+      </div>
+    </div>
+    <div class="form-group col-md-2 col-lg-6">
+      <button type="submit" id="submit" class="btn btn-primary" [disabled]="!jePovezava()">Ponastavi!</button>
+    </div>
+    <div class="alert alert-info fade show col-md-12" *ngIf="!jePovezava()"  role="alert">
+      Ni povezave z internetom!
+    </div>
+    <br>
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="napakaNaObrazcu" role="alert">
+      <strong id="danger-strong">{{napaka}}</strong><span id="danger-navadno">{{napakaNaObrazcu}}</span>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" *ngIf="uspesnoObvestilo" role="alert">
+      <strong>Geslo je bilo uspešno ponastavljeno! Lahko se vrneš na <a routerLink="/prijava">prijavo in se
+        prijaviš!</a></strong>
+    </div>
+  </form>
+</div>

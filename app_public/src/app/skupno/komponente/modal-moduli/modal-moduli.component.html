@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{modalTitle}}</h4>
+  <button type="button" class="close text-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div>
+  <form>
+      <div class="form-moduli">
+          <div class="form-group col-12">
+              <!-- KREIRANJE NOVEGA MODULA -->
+              <div *ngIf="new">
+                <label class="" for="formImeModulaInput">Ime modula</label>
+                <input type="text" class="form-control" id="formImeModulaInput" name="ime" [(ngModel)]="noviModul.ime" ngbAutofocus [disabled]="!jePovezava()">
+              </div>
+              <!-- POSODABLJANJE MODULA -->
+              <div *ngIf="update">
+                <label class="" for="formImeModulaInput">Novo ime za modul <b>{{inputModul.ime}}</b>.</label>
+                <input type="text" class="form-control" id="formImeModulaInput" name="ime" [(ngModel)]="noviModul.ime" ngbAutofocus [disabled]="!jePovezava()" >
+              </div>
+              <!-- BRISANJE MODULA -->
+              <div *ngIf="delete">
+                <p>Modul <b>{{inputModul.ime}}</b> in vse pripadnosti predmetov temu modulu bodo izbrisane.</p>
+              </div>
+
+              <div class="d-flex">
+                <span class="flex-fill mr-3"><button type="submit" (click)="izvediAkcijo(modalTitle)" class="btn btn-primary btn-block my-3" id="objavi-modul" [disabled]="!jePovezava()">{{submitButton}}</button></span>
+                <span class=" flex-fill"><button type="button" class="btn btn-danger btn-block my-3" (click)="activeModal.dismiss('Prekliči click')" ngbAutofocus [disabled]="!jePovezava()">Prekliči</button></span>
+              </div>
+          </div>
+          <!-- alerts -->
+          <div *ngIf="formWarning" class="form-group col-12">
+            <div style="margin-top:10px" class="alert alert-warning"  role="alert">
+                {{formWarningText}}
+                <button type="button" class="close close-warning" (click)="formWarning=false" [disabled]="!jePovezava()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          </div>
+          <div *ngIf="formSuccess" class="form-group col-12">
+              <div style="margin-top:10px" class="alert alert-success" role="alert">
+                  {{formSuccessText}}
+                  <button type="button" class="close close-warning" (click)="formSuccess=false" [disabled]="!jePovezava()">
+                      <span aria-hidden="true" class="text-dark">&times;</span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>

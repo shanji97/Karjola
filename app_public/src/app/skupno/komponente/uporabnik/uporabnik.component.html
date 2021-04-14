@@ -1,0 +1,43 @@
+<div class="content bg-dark p-3">
+  <div *ngIf ="!jePovezava() || !jePrijavljen()"> <strong id="danger-strong">{{napaka}}</strong> <span id="danger-navadno">Nisi prijavljen ali ni povezave!</span></div>
+  <div class="container" *ngIf ="jePrijavljen() && jePovezava()">
+    <p class="h3 py-3" >UPORABNIŠKE NASTAVITVE</p>
+
+    <p *ngIf="(jeTrenutni() || jeAdmin()) && obstaja">UPORABNIŠKO IME: {{uporabnik.ime}}</p>
+    <p *ngIf="(jeTrenutni() || jeAdmin()) && obstaja">E-POŠTNI NASLOV: {{uporabnik.ePosta}}</p>
+    <form id="changePasswordForm" (submit)="nastaviNovoGeslo()" *ngIf="jeTrenutni()" class="mb-3">
+      <input type="hidden" name="obrazec" value="posodobiGeslo">
+      <div class="form-group">
+        <label for="currentPassword">TRENUTNO GESLO</label>
+        <input type="password" class="form-control" name="trenutnoGeslo" [(ngModel)]="uporabniskiPodatki.trenutnoGeslo"
+               id="currentPassword" placeholder="Trenutno geslo"  [disabled]="!jePovezava()" required>
+      </div>
+      <div class="form-group">
+        <label for="currentPassword">NOVO GESLO</label>
+        <input type="password" class="form-control" name="novoGeslo" [(ngModel)]="uporabniskiPodatki.novoGeslo"
+               id="currentPassword" placeholder="Novo geslo"  [disabled]="!jePovezava()" required>
+      </div>
+      <div class="form-group">
+        <label for="currentPassword">POTRDITEV GESLA</label>
+        <input type="password" class="form-control" name="potrdiNovoGeslo"
+               [(ngModel)]="uporabniskiPodatki.potrdiNovoGeslo" id="currentPassword" placeholder="Novo geslo"  [disabled]="!jePovezava()"required>
+      </div>
+      <button id="changePasswordSubmit" class="btn btn-primary" type="submit"  [disabled]="!jePovezava()">Spremeni geslo</button>
+    </form>
+    <form (submit)="odjava()" *ngIf="jeTrenutni()">
+      <button id="changePasswordSubmit" class="btn btn-danger" type="submit" [disabled]="!jePovezava() && jeTrenutni()">Odjavi se "{{uporabnik.ime}}"</button>
+    </form>
+    <br>
+    <form (submit)="izbrisiUporabnika()" *ngIf="jeTrenutni() && jePovezava()">
+      <button id="changePasswordSubmit" class="btn btn-danger" type="submit" [disabled]="!jePovezava()">Izbris uporabnika "{{uporabnik.ime}}"
+      </button>
+    </form>
+    <br>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="napakaNaObrazcu">
+      <strong id="danger-strong">{{napaka}}</strong> <span id="danger-navadno">{{napakaNaObrazcu}}</span>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="uspesnoObvestilo">
+      <strong id="danger-strong">{{sporocilo}}</strong> <span id="danger-navadno"></span>
+    </div>
+  </div>
+</div>

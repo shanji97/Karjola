@@ -1,0 +1,25 @@
+<p class="h4 m-3">Povezava</p>
+<div class="form-group mt-3 ml-3">
+  <textarea [(ngModel)]="povezava" (input)="preveriPravilnost()" class="form-control" rows="1" placeholder="Link do gradiva" pattern="https?:\/\/[-a-zA-Z0-9@:%._\+~#=]+\.[a-zA-Z0-9()]+\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"></textarea>
+</div>
+<p class="h4 m-3">Naloži datoteko</p>
+<div class="input-group mb-3 ">
+  <div class="custom-file ml-3 ">
+    <input (input)="getFile($event.target.files)" type="file" class="custom-file-input">
+    <label *ngIf="!datoteka" class="custom-file-label">Izberi datoteko (max 16 Mb)</label>
+    <label *ngIf="datoteka" class="custom-file-label">{{datoteka.name}} ({{datoteka.size | velikostDatoteke}})</label>
+  </div>
+</div>
+
+<div class="alerts col-md-12">
+  <div class="alert alert-success d-block" role="alert" *ngIf="gradivoDodano">
+    <strong>Gradivo dodano!</strong>
+  </div>
+  <div class="alert alert-danger d-block" role="alert" *ngIf="uploadNapaka">
+    <strong>Nalaganje gradiva ni uspelo.</strong>
+  </div>
+</div>
+
+<button (click)="naloziGradivo()" class="gradivoOptions btn btn-block m-2">
+  <i class="fa fa-upload black mt-2"></i> <b class="ml-1">Dodaj</b>
+</button>

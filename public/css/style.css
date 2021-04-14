@@ -1,0 +1,288 @@
+body {
+  background-color: #545454; 
+  color: white;
+  }
+  body .bg-darkerBg {
+    background-color: #353535; }
+  body .bg-default {
+    background-color: #545454; }
+  body .bg-green-lvl1 {
+    background-color: #02b402; }
+  body .bg-green-lvl2 {
+    background-color: #57e757; }
+  body .bg-green-lvl3 {
+    background-color: #9bec9b; }
+  body .bg-green-lvl4 {
+    background-color: #cbe9cb; }
+  body .black {
+    color: black; }
+  body .wrapDiv {
+    display: inline-block; }
+  body .centerDiv {
+    margin: 0 auto; }
+  body .scrollable {
+    height: 100%;
+    overflow-y: auto; }
+  body .gradivoOptions {
+    background-color: yellow;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px; }
+    body .gradivoOptions:hover {
+      background-color: #999900; }
+  body .komentar {
+    background-color: #cbe9cb;
+    border-radius: 10px; }
+  body .predmet-btn {
+    background-color: #02b402;
+    text-align: left;
+    overflow: auto;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px; }
+    body .predmet-btn:hover {
+      background-color: #018201; }
+
+aside .content {
+  font-size: 18px;
+  border-radius: 20px;
+  color: white; }
+  aside .content .menu-icon {
+    font-size: 24px; }
+
+aside .dropdown-btn {
+  color: black;
+  text-align: left;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px; }
+  aside .dropdown-btn.dropdown-lvl-1 {
+    background-color: #02b402; }
+  aside .dropdown-btn.dropdown-lvl-2 {
+    background-color: #57e757; }
+  aside .dropdown-btn.dropdown-lvl-3 {
+    background-color: #9bec9b; }
+  aside .dropdown-btn.dropdown-lvl-4 {
+    background-color: #cbe9cb; }
+  aside .dropdown-btn.dropdown-link:hover {
+    color: black;
+    text-decoration: underline; }
+
+main .content {
+  font-size: 18px;
+  border-radius: 20px;
+  color: white; }
+
+main .formtitle {
+  text-align: center; }
+  
+/*cross_site_css*/
+
+.form-control {
+  background-color: #353535;
+  color: white; }
+  .form-control:focus {
+    background-color: #353535;
+    color: white; }
+  .form-control:disabled {
+    background-color: #353535;
+    color: white; }
+  .form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #6c757d;
+    opacity: 1;
+    /* Firefox */ }
+
+
+
+.alerts {
+  color: inherit; }
+
+.alert {
+  display: none; }
+
+.btn-primary {
+  background-color: green;
+  border-color: green; }
+  .btn-primary:hover {
+    background-color: #00a100;
+    border-color: #00a100; }
+
+.alert-warning {
+  background-color: #D9D74C;
+  border-color: #D9D74C; }
+
+.alert-success {
+  background-color: #83D856;
+  border-color: #83D856; }
+
+.alert-danger {
+  background-color: #D94141;
+  border-color: #D94141; }
+
+/*admin_prof_asist*/
+#admin_prof_asist.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.vsebina {
+    padding: 10px;
+    background-color: #353535;
+    border-radius: 20px;
+}
+
+a#admin_prof_asist {
+    color: white;
+}
+
+.slika-prof {
+    margin-top: 20px;
+}
+
+#textAreaOpis {
+    margin-bottom: 10px;
+}
+
+#image-upload-prof-asist {
+    margin-top: 10px;
+}
+
+/*admin_managment*/
+#admin_managment.container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.naslov-sekcije {
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: #FFE8D4;
+    border-radius: 10px;
+}
+
+.ena-vrstica{
+    margin-top: 10px; 
+    margin-left: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #7A9E9F;
+    color: black;
+    border-radius: 10px;
+}
+
+.btn-dodaj {
+    margin-top: 10px;
+}
+
+.form-prof-asist, .form-predmeti, .form-moduli {
+    margin-top: 30px;
+}
+
+.btn-objavi {
+    margin-top: 10px;
+}
+
+.section-predmeti {
+    margin-top: 70px;
+}
+
+.section-moduli {
+    margin-top: 70px;
+}
+
+input#admin_managment{
+    color: white !important;
+}
+
+#form-prof-asist-show-hide {
+    display: none;
+}
+
+#form-predmeti-show-hide {
+    display: none;
+}
+
+#form-moduli-show-hide {
+    display: none;
+}
+
+a#admin_managment {
+    color: black;
+}
+
+/*splosni_pogoji*/
+#besedilo1,  #besedilo2, #besedilo3, #besedilo4 {
+    display: none;
+}
+
+h6:hover {
+    cursor: pointer;
+}
+
+/*search*/
+thead {
+    background-color:GreenYellow;
+    color: black;
+}
+
+/*prijava*/
+
+form, form > small {
+  color: white; }
+
+::placeholder {
+  
+  color: red;
+  opacity: 1;
+  /* Firefox */ }
+
+/*potrditev*/
+.confirmation-message {
+    font-size: x-large;
+}
+
+a#potrditev{
+	
+	color: DarkDrey;
+}
+
+/*fixes*/
+.form-control[readonly] {
+    color: dimgray;
+	background-color: whitesmoke;
+}
+
+.komentar:focus, #link{
+	color: white !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.hoverNoLink:hover {
+  cursor: pointer;
+}
+
+.form-dark {
+  background-color: #353535!important;
+  color: whitesmoke!important;
+}
+
+@media (max-width: 480px) {
+  .p-5 {
+    padding: 2rem!important;
+  }
+  
+  .col-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 150%;
+}
+}

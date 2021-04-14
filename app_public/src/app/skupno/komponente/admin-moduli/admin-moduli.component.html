@@ -1,0 +1,20 @@
+<!-- MODULI -->
+<div class="section-moduli">
+  <div class="row">
+    <div class="naslov-sekcije col-sm-11 col-md-11 col-xl-11">
+        <span class="float-left"><p class="text-dark"><b>MODULI</b></p></span>
+        <span class="float-left ml-4 mb-2"><button class="btn btn-dark btn-admin px-5" (click)="openModal('new')" [disabled]="!jePovezava()">Dodaj modul</button></span>
+    </div>
+  </div>
+  <div class="podsekcije">
+    <div class="row" *ngFor="let modul of moduli; let i = index">
+        <div class="ena-vrstica col-sm-10 col-md-9 col-xl-9">
+            <span class="float-left"><b>{{modul.ime}}</b></span>
+            <span class="float-right">
+                <button class="btn btn-dark btn-admin mx-2 my-0" (click)="openModal('update', modul, i)"  [disabled]="!jePovezava()">Uredi ime</button>
+                <button class="btn btn-danger btn-admin text-dark mx-2" (click)="openModal('delete', modul, i)"  [disabled]="!jePovezava()"><i class="far fa-trash-alt fa-lg" style="color:black;"></i></button>            
+            </span>
+        </div>
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<button (click)="togglePrikaziInfo()" class="btn predmet-btn dropdown-toggle my-2 pl-3">{{gradivo.ime}}</button>
+<div *ngIf="prikaziInfo" class="pl-2">
+  <p class="px-3 text-danger">Št. prijav gradiva: {{gradivo.stPrijav}}</p>
+  <ng-container *ngIf="jeAdmin">
+    <button (click)="preklopiVidljivost()" class="btn gradivoOptions ml-3">
+      <i *ngIf="vidno" class="fa fa-eye-slash black d-inline mx-1 mt-1"></i>
+      <i *ngIf="!vidno" class="fa fa-eye black d-inline mx-1 mt-1"></i>
+    </button>
+
+    <button (click)="izbrisiGradivo()" class="btn gradivoOptions ml-3">
+      <i class="fa fa-trash-alt black d-inline mx-1 mt-1"></i>
+    </button>
+  </ng-container>
+
+  <button (click)="prijaviGradivo()" class="btn btn-secondary gradivoOptions ml-3">
+    <i class="fa fa-exclamation-triangle black d-inline mx-1 mt-1"></i>
+  </button>
+
+  <button class="btn gradivoOptions ml-3">
+    <a (click)="odpri()" class="fa fa-download black d-inline mx-1 mt-1"></a>
+  </button>
+  
+  <!--komentarji-->
+  <div class= "mt-2 ml-3">
+    <p *ngIf="gradivo.komentarji.length > 0">Komentarji</p>
+    <div *ngFor="let komentar of gradivo.komentarji" class="komentar text-dark my-2">
+      <app-komentar [gradivo]="gradivo" [komentar]="komentar" (izbrisi)="izbrisiKomentar($event)"></app-komentar>
+    </div>
+    
+    <app-nov-komentar *ngIf="jePrijavljen" [gradivo]="gradivo" (objavi)="objaviKomentar($event)"></app-nov-komentar>
+  </div>
+</div>

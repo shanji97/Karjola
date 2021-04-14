@@ -1,0 +1,11 @@
+body {
+  background-color: #545454; }
+
+form, form > small {
+  color: white; }
+
+::placeholder {
+  
+  color: red;
+  opacity: 1;
+  /* Firefox */ }

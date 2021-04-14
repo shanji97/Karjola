@@ -1,0 +1,13 @@
+.card-naslov {
+  color: black;
+  background-color: #b2d39c;
+  margin-bottom: 10px;
+}
+
+.card-elementi, .list-group-item{
+  background-color: #4e555b;
+}
+
+.card {
+  border-radius: 25px;
+}

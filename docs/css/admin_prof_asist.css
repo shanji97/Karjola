@@ -1,0 +1,31 @@
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.vsebina {
+    padding: 10px;
+    background-color: #353535;
+    border-radius: 20px;
+}
+
+a {
+    color: white;
+}
+
+.slika-prof {
+    margin-top: 20px;
+}
+
+#textAreaOpis {
+    margin-bottom: 10px;
+}
+
+#image-upload-prof-asist {
+    margin-top: 10px;
+}

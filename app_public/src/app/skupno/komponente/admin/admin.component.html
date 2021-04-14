@@ -1,0 +1,8 @@
+<div class="p-5 content bg-dark" id="admin_managment" *ngIf="admin">
+  <div class="alert alert-warning" [hidden]="!sporociloNapaka">{{sporociloNapaka}}</div>
+  <h4>ADMIN MANAGEMENT</h4>
+  <app-admin-osebje [osebje]="osebje"></app-admin-osebje>
+  <app-admin-predmeti [predmeti]="predmeti" [osebje]="osebje" [moduli]="moduli"></app-admin-predmeti>
+  <app-admin-moduli [moduli]="moduli"></app-admin-moduli>
+</div>
+<h3 class="m-3" *ngIf="!admin">Administratorska opravila so na voljo le administratorjem.<br>Lp in lep pozdrav</h3>

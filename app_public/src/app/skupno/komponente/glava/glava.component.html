@@ -1,0 +1,58 @@
+<!-- Clicking on this should take you to home-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <a class="navbar-brand mx-3 h1 mb-0 pr-5" routerLink="/">
+    <span><b>Karjola</b></span>
+    <img src="/assets/public/img/Logo.png" width="50" height="50" alt="">
+  </a>
+  <!-- Toggle navbar when screen gets too small-->
+  <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse"
+    data-target="#toggleNavBar"></button>
+  <div class="collapse navbar-collapse" id="toggleNavBar">
+
+    <div class="nav-item my-2" *ngIf="jePrijavljen() && jeAdmin() && jePovezava()" [disabled]="!jePovezava()">
+      <a class="nav-link btn btn-info py-1 ml-auto mr-2 px-2" routerLink="admin">Admin panel</a>
+    </div>
+
+    <!-- Login anad register buttons-->
+    <div class="nav-item my-2" *ngIf="!jePrijavljen() && jePovezava()">
+      <a class="nav-link btn btn-secondary py-1 ml-auto mr-2 px-2 " routerLink="prijava" [disabled]="!jePovezava()">Prijava</a>
+    </div>
+    <div class="nav-item my-2" *ngIf="!jePrijavljen() && jePovezava()">
+      <a class="nav-link btn btn-success py-1 ml-auto mr-2 px-2" routerLink="registracija" [disabled]="!jePovezava()">Registracija</a>
+    </div>
+    <div class="nav-item my-2" *ngIf="!jePovezava()">
+      <a class="nav-link btn btn-danger py-1 ml-auto mr-2 px-2" [disabled]="true">Offline način - vzpostavi internetno povezavo</a>
+    </div>
+
+    <!-- Search button-->
+    
+    <div class="nav-item ml-auto my-2">
+      <form action="/iskanje" method="get" class="d-inline">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="iskalniIzraz" [ngModelOptions]="{standalone: true}" placeholder="Išči gradivo" [disabled] ="!jePovezava()">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit" routerLink="/iskanje" [queryParams]="{iskalniIzraz: iskalniIzraz}" [disabled]="!jePovezava()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- User button -->
+    <div class="nav-item navbar-nav dropdown" *ngIf="jePrijavljen()">
+      <a class="nav-link fas fa-user fa-2x mx-3 d-flex justify-content-center" data-toggle="dropdown"></a>
+      <div class="dropdown-menu dropdown-menu-right" >
+        <p class="dropdown-header text-info" ><b>{{vrniUporabnika()}}</b></p>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item"  routerLink="uporabniki/{{vrniId()}}" [disabled]="!jePovezava()">Uporabniške nastavitve</a>
+    
+        <a class="dropdown-item" routerLink="admin" *ngIf= "jeAdmin()" [disabled]="!jePovezava()">Admin panel</a>
+    
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item text-danger" (click)="odjava()"  routerLink="/" [disabled]="!jePovezava()">Odjava</a>
+      </div>
+    </div>
+  </div>
+</nav>

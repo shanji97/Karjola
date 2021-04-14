@@ -1,0 +1,43 @@
+body {
+  background-color: #545454;
+  color: white; }
+
+.form-control {
+  background-color: #353535;
+  color: white; }
+  .form-control:focus {
+    background-color: #353535;
+    color: white; }
+  .form-control:disabled {
+    background-color: #353535;
+    color: white; }
+  .form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #6c757d;
+    opacity: 1;
+    /* Firefox */ }
+
+.alerts {
+  color: inherit; }
+
+.alert {
+  display: none; }
+
+.btn-primary {
+  background-color: green;
+  border-color: green; }
+  .btn-primary:hover {
+    background-color: #00a100;
+    border-color: #00a100; }
+
+.alert-warning {
+  background-color: #D9D74C;
+  border-color: #D9D74C; }
+
+.alert-success {
+  background-color: #83D856;
+  border-color: #83D856; }
+
+.alert-danger {
+  background-color: #D94141;
+  border-color: #D94141; }
