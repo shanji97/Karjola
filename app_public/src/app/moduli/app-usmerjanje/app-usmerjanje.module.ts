@@ -9,7 +9,6 @@ import { VnesiNovoGesloComponent } from '../../skupno/komponente/vnesi-novo-gesl
 import { ObnoviGesloComponent } from '../../skupno/komponente/obnovi-geslo/obnovi-geslo.component';
 import { IskanjeComponent } from '../../skupno/komponente/iskanje/iskanje.component';
 import { PodatkovnaBazaComponent } from '../../skupno/komponente/podatkovna-baza/podatkovna-baza.component';
-import { StatistikeComponent } from '../../skupno/komponente/statistike/statistike.component';
 import { SplosniPogojiComponent } from '../../skupno/komponente/splosni-pogoji/splosni-pogoji.component';
 import { PotrditevObnoveGeslaComponent } from '../../skupno/komponente/potrditev-obnove-gesla/potrditev-obnove-gesla.component';
 import { UporabnikComponent } from '../../skupno/komponente/uporabnik/uporabnik.component';
@@ -39,9 +38,6 @@ const poti: Routes = [
   }, {
     path: 'db',
     component: PodatkovnaBazaComponent
-  }, {
-    path: 'statistike',
-    component: StatistikeComponent
   }, {
     path: 'splosniPogoji', // še naredim danes
     component: SplosniPogojiComponent

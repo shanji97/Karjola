@@ -3,13 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppUsmerjanjeModule } from './moduli/app-usmerjanje/app-usmerjanje.module';
-import { ChartsModule } from 'ng2-charts';
-
 import { OgrodjeComponent } from './skupno/komponente/ogrodje/ogrodje.component';
 import { GlavaComponent } from './skupno/komponente/glava/glava.component';
 import {GradivoUploadComponent} from './skupno/komponente/gradivo-upload/gradivo-upload.component';
-
-
 import { SideBarComponent } from './skupno/komponente/side-bar/side-bar.component';
 import { DomacaStranComponent } from './skupno/komponente/domaca-stran/domaca-stran.component';
 import { RegistracijaComponent } from './skupno/komponente/registracija/registracija.component';
@@ -18,7 +14,6 @@ import { VnesiNovoGesloComponent } from './skupno/komponente/vnesi-novo-geslo/vn
 import { ObnoviGesloComponent } from './skupno/komponente/obnovi-geslo/obnovi-geslo.component'; 
 import { IskanjeComponent } from './skupno/komponente/iskanje/iskanje.component';
 import { PodatkovnaBazaComponent } from './skupno/komponente/podatkovna-baza/podatkovna-baza.component';
-import { StatistikeComponent } from './skupno/komponente/statistike/statistike.component';
 import { SplosniPogojiComponent } from './skupno/komponente/splosni-pogoji/splosni-pogoji.component';
 import { PotrditevObnoveGeslaComponent } from './skupno/komponente/potrditev-obnove-gesla/potrditev-obnove-gesla.component';
 import { UporabnikComponent } from './skupno/komponente/uporabnik/uporabnik.component';
@@ -55,7 +50,6 @@ import { CasOddajePipe } from './skupno/pipes/cas-oddaje.pipe';
       DomacaStranComponent,
       SideBarComponent,
       IskanjeComponent,
-      StatistikeComponent,
       SplosniPogojiComponent,
       PodatkovnaBazaComponent,
 
@@ -91,11 +85,6 @@ import { CasOddajePipe } from './skupno/pipes/cas-oddaje.pipe';
       FormatirajSemesterPipe,
       FormatirajTipIzbirnegaPipe,
       CasOddajePipe
-
-    
-      //Pipe
-      // -> pokažemo datum nastanka komentarja
-      // -> pokažemo koliko časa je uporabnik registriran
   ],
   imports: [
     
@@ -105,7 +94,6 @@ import { CasOddajePipe } from './skupno/pipes/cas-oddaje.pipe';
     ReactiveFormsModule,
     AppUsmerjanjeModule,
     NgbModule,
-    ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [ModalPredmetiComponent],

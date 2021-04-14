@@ -28,15 +28,16 @@ export class RegistracijaComponent implements OnInit {
     ePosta: '',
     novoGeslo: '',
     ponoviNovoGeslo: '',
-    naslov: '',
-    posta: '',
-    kraj: '',
-    jeAdmin: false
+    naslov: 'Tesni naslov 12345667889a',
+    posta: '1000',
+    kraj: 'Lublana',
+    jeAdmin: false,
+    jePotrjen:false
     
   } 
   
   public glava = {
-    naslov: "REGISTRACIJA UPORABNIKA",
+    naslov: "REGISTRACIJA UPORABNIKA (spodnja vrstica je o",
     podnaslov: "",
 
   }

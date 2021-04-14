@@ -4,6 +4,7 @@ export class Uporabnik {
     ePosta: string;
     _id: string;
     jeAdmin: boolean;
+    jePotrjen: boolean;
 }
 export class UporabnikPrijava{
     ePosta:string;
@@ -25,8 +26,7 @@ export class UporabnikPodrobnosti{
     uporabniskoIme:string;
     ePosta:string;
     jeAdmin: string;
-    posta:string;
-    kraj:string;
+    jePotrjen: string;
 }
 export class UporabnikObnovaGesla{
     ePosta:string;

@@ -19,10 +19,6 @@
  *     value:
  *      sporočilo: Uporabnika ne najdem v bazi
  */
-
-
-
-
 /**
  * @swagger
  * components:
@@ -280,91 +276,133 @@
  *     example:
  *       sporočilo: cd 
  */
-const mongoose = require('mongoose');
-const crypto = require('crypto');
-const jwt = require('jsonwebtoken');
+ const mongoose = require('mongoose');  //lažje delo z MongoDB bazo
+ const crypto = require('crypto');     //uporaba za enosmerno zgoščevanje podatkov (geslo, žeton za obnavljanje gesla,..)
+ const jwt = require('jsonwebtoken'); //generiranje JWT žetona za avtentikacijo uporabnika
+ /**
+  * @swagger
+  * components:
+  *  schemas:
+  *      Uporabnik:
+  *          type: object
+  *          properties:
+  *              uporabniskoIme:
+  *                  type: string
+  *              ePosta:
+  *                  type: string
+  *              zgoscenaVrednost:
+  *                  type: string
+  *              zetonZaObnavljanjeGesla:
+  *                  type: string
+  *                  default: obnovljeno
+  *              jeAdmin:
+  *                  type: boolean
+  *                  default: false
+  *              kraj:
+  *                  type: string
+  *                  default: Ljubljana
+  *              posta:
+  *                  type: string
+  *                  default: 1000
+  *          required:
+  *              - uporabniskoIme
+  *              - ePosta
+  *              - zgoscenaVrednost
+  *              - kraj
+  *              - posta
+  */
+ //UPORABNIK
+ //Shema uporabnika 
+ 
+ const uporabnikiSchema = new mongoose.Schema({
+     uporabniskoIme: {type:String, required: true, unique: true},   // uporabniško ime
+     ePosta: {type:String, required: true, unique: true},          // e-pošta
+     nakljucnaVrednost: String,                                   // naključna vrednost, ki se generira za potrebe enosmernega zgoščevanja gesla in žetona za obnavljanje (unikatno) 
+     zgoscenaVrednost: {type:String, required:true},             // zgoščena vrednost gesla in naključne vrednosti, ki se dejansko preverja
+     zetonZaObnavljanjeGesla: String,                           // žeton za obnavljanje gesla  (zgoščena vrednost žetona in  naključne vrednosti)     
+     jeAdmin: {type: Boolean, "default":false},                   //informacija ali uporabnik je administrator
+     jePotrjen: {type: Boolean, "default":false}                 //potrdimo, da je uporabnik legit
+ });
 
-/**
- * @swagger
- * components:
- *  schemas:
- *      Uporabnik:
- *          type: object
- *          properties:
- *              uporabniskoIme:
- *                  type: string
- *              ePosta:
- *                  type: string
- *              zgoscenaVrednost:
- *                  type: string
- *              zetonZaObnavljanjeGesla:
- *                  type: string
- *                  default: obnovljeno
- *              jeAdmin:
- *                  type: boolean
- *                  default: false
- *              kraj:
- *                  type: string
- *                  default: Ljubljana
- *              posta:
- *                  type: string
- *                  default: 1000
- *          required:
- *              - uporabniskoIme
- *              - ePosta
- *              - zgoscenaVrednost
- *              - kraj
- *              - posta
- */
-
-const uporabnikiSchema = new mongoose.Schema({
-    uporabniskoIme: {type:String, required: true/*, unique: true*/},
-    ePosta: {type:String, required: true, unique: true},
-    nakljucnaVrednost: String, 
-    zgoscenaVrednost: {type:String, required:true},
-    zetonZaObnavljanjeGesla: {type: String, "default":"obnovljeno"}, 
-    jeAdmin: {type: Boolean, "default":false},
-    naslov: String,
-    kraj: {type: String, "default": "Ljubljana", required: true},
-    posta: {type: Number, min:1000, max:9999,"default":1000, required: true}   
-});
-
-uporabnikiSchema.methods.nastaviGeslo = function(geslo){
-    this.nakljucnaVrednost = crypto.randomBytes(16).toString('hex');
-    this.zgoscenaVrednost = crypto.pbkdf2Sync(geslo, this.nakljucnaVrednost, 1000,64,'sha512').toString('hex');
-};
-uporabnikiSchema.methods.nastaviZeton = function(zeton){
-   this.zetonZaObnavljanjeGesla = crypto.pbkdf2Sync(zeton, this.nakljucnaVrednost, 1000,64,'sha512').toString('hex');
-}
-uporabnikiSchema.methods.preveriZeton = function(zeton){
-    let zetonZaObnavljanjeGesla = crypto.pbkdf2Sync(zeton,this.nakljucnaVrednost,1000,64,'sha512').toString('hex');
-    return this.zetonZaObnavljanjeGesla == zetonZaObnavljanjeGesla;
-}
-
-uporabnikiSchema.methods.preveriGeslo = function(geslo){
-    let zgoscenaVrednost = crypto.pbkdf2Sync(geslo,this.nakljucnaVrednost,1000,64,'sha512').toString('hex');
-    return this.zgoscenaVrednost == zgoscenaVrednost;
-};
-
-uporabnikiSchema.methods.posodobiGeslo = function(staroGeslo, novoGeslo, ponoviNovoGeslo){
-
-    if(!(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@€#\$%\^&\*])(?=.{8,})").test(novoGeslo)) || novoGeslo != ponoviNovoGeslo || !this.preveriGeslo(staroGeslo)){
-        return false;  //uporabnika obvesti, da je nekaj šlo narobe pa mu daj hinte naj preveri kaj je crknilo
-    }
-    this.nastaviGeslo(novoGeslo);  //geslo uspešno spremenjeno
-    return true;
-}
-
-uporabnikiSchema.methods.generirajJwt = function(){
-    const datumPoteka = new Date();
-    datumPoteka.setDate(datumPoteka.getDate()+7);
-    return jwt.sign({
-        _id: this._id,
-        uporabniskoIme: this.uporabniskoIme,
-        ePosta: this.ePosta,
-        jeAdmin: this.jeAdmin,
-        potek: parseInt(datumPoteka.getTime() / 1000, 10)
-    }, process.env.JWT_GESLO);
-};
-uporabnikiSchema.methods.preveriAdmin = function() { return this.jeAdmin}; //securanje na strani apija za vsak slučaj
-mongoose.model('Uporabnik', uporabnikiSchema, 'Uporabniki');
+ //Uporabnik si nastavi novo geslo, dobi tudi naključno vrednost
+     //Vhod: novo geslo, ki ga določi uporabnik   
+ uporabnikiSchema.methods.nastaviGeslo = function(geslo){
+     this.nakljucnaVrednost = crypto.randomBytes(16).toString('hex');
+     this.zgoscenaVrednost = crypto.pbkdf2Sync(geslo, this.nakljucnaVrednost, 1000,64,'sha512').toString('hex');
+ };
+ //Uporabnik si avtomatsko ob registraciji (in prošnji nas) nastavi novo geslo, dobi tudi naključno vrednos
+     //Vhod: zeton, ki se samodejno generira ob registraciji / prošnji za zahtevo za obnovo 
+ uporabnikiSchema.methods.nastaviZeton = function(zeton){
+    this.zetonZaObnavljanjeGesla = crypto.pbkdf2Sync(zeton, this.nakljucnaVrednost, 1000,64,'sha512').toString('hex');
+ }
+ //Preverba veljavnosti žetona ob obnovi gesla in ga takoj nastavimo na novo vrednost
+     //Vhod: zeton, ki se samodejno generira ob registraciji / prošnji za zahtevo za obnovo 
+     //Izhod: informacija ali je zgoščena vrednost žetona identična z našim žetonom (žeton + naključna vrednost)
+ uporabnikiSchema.methods.preveriZeton = function(zeton){
+     let jeUjemanje =  this.zetonZaObnavljanjeGesla==crypto.pbkdf2Sync(zeton,this.nakljucnaVrednost,1000,64,'sha512').toString('hex');  
+     this.nastaviZeton();
+     return jeUjemanje;
+     
+ }
+ //Preverba veljavnosti gesla ob prijavi 
+     //Vhod: geslo, ki ga vnesemo  ob  prijavi
+     //Izhod: informacija ali je zgoščena vrednost gesla identična z našim geslo (geslo + naključna vrednost)
+ uporabnikiSchema.methods.preveriGeslo = function(geslo){
+     return this.zgoscenaVrednost == crypto.pbkdf2Sync(geslo,this.nakljucnaVrednost,1000,64,'sha512').toString('hex');
+ };
+ 
+ //TODO:
+ //PREVERI in NASTAVI daj v skupno (VSAKA svoja kategorija), bolj skalabilno metodo, razširi obstoječe
+ /*uporabnikiSchema.methods.preveri = function(tipPodatka, vsebinaPodatka){
+     
+     switch(tipPodatka){
+         case "geslo" :
+         
+         break;
+         case "zeton" :
+            
+         break;
+         default:
+             return false;
+     }
+ 
+ }*/
+ 
+ //Potrdimo uporabnika (ali je mail veljaven), pokličemo ob potrditvi maila
+ uporabnikiSchema.methods.potrdiUporabnika = function()
+ { 
+     if(!this.jePotrjen){
+         this.jePotrjen=true;
+     }
+ }
+ 
+ //Posodabljanje gesla na zahtevo uporabnika (preko računa), če  novo geslo ustreza vzorcu & sta novo in ponovitev novega gesla enaki & in je staro geslo še veljavno
+     //VHOD: staro geslo, ter 2x novo geslo
+     //IZHOD: informacija, ali je bilo geslo uspešno spremenjeno
+ uporabnikiSchema.methods.posodobiGeslo = function(staroGeslo, novoGeslo, ponoviNovoGeslo){
+ 
+     if(!(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@€#\$%\^&\*])(?=.{8,})").test(novoGeslo)) || novoGeslo != ponoviNovoGeslo || !this.preveriGeslo(staroGeslo)){
+         return false;  //uporabnika obvesti, da je nekaj šlo narobe pa mu daj hinte naj preveri kaj je crknilo
+     }
+     this.nastaviGeslo(novoGeslo);  //geslo uspešno spremenjeno
+     return true;
+ }
+ 
+ //Generiramo novi JWT, vsebovani so _id, uporabniško ime, e pošta, ali je administrator ter datum poteka
+ //podpišemo z geslom v .env datoteki
+ uporabnikiSchema.methods.generirajJwt = function(){
+     const datumPoteka = new Date();
+     datumPoteka.setDate(datumPoteka.getDate()+7);
+     return jwt.sign({
+         _id: this._id,
+         uporabniskoIme: this.uporabniskoIme,
+         ePosta: this.ePosta,
+         jeAdmin: this.jeAdmin,
+         potek: parseInt(datumPoteka.getTime() / 1000, 10)
+     }, process.env.JWT_GESLO);
+ };
+ 
+ //Preverimo ali je dotični uporabnik admninistrator
+     //IZHOD: Informacija, ali je uporabnik administrator ali ne.....
+ uporabnikiSchema.methods.preveriAdmin = function() { return this.jeAdmin}; //securanje na strani apija za vsak slučaj
+ mongoose.model('Uporabnik', uporabnikiSchema, 'Uporabniki');
