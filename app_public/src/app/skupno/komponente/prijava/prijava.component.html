@@ -18,7 +18,7 @@
         <label for="exampleInputPassword1">GESLO <em class="required">*</em></label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Geslo" name="trenutnoGeslo"
                [(ngModel)]="prijavniPodatki.geslo" [disabled]="!jePovezava()" required>
-        <small id="emailHelp" class="form-text text-muted" *ngIf="jePovezava()">Pozabljeno geslo? Obnoviš ga lahko na <a
+        <small id="passwordHelp" class="form-text text-muted" *ngIf="jePovezava()">Pozabljeno geslo? Obnoviš ga lahko na <a
           routerLink="/obnoviGeslo" [disabled]="!jePovezava()">naslednji povezavi</a>.</small>
       </div>
     </div>

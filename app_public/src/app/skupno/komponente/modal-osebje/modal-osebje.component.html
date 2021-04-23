@@ -131,10 +131,10 @@
         <!-- BUTTONS -->
         <div class="d-flex">
           <span class="flex-fill mr-3"><button type="submit" (click)="izvediAkcijo(modalTitle)"
-                                               class="btn btn-primary btn-block my-3" [disabled]="!jePovezava()">{{ submitButton }}</button></span>
+                                               class="btn btn-primary btn-block my-3" [disabled]="!jePovezava()" aria-label="Posodobi osebje">{{ submitButton }}</button></span>
           <span class=" flex-fill"><button type="button" class="btn btn-danger btn-block my-3"
                                            (click)="activeModal.dismiss('Prekliči click')"
-                                           ngbAutofocus [disabled]="!jePovezava()">Prekliči</button></span>
+                                           ngbAutofocus [disabled]="!jePovezava()" aria-label="Prekliči">Prekliči</button></span>
         </div>
         <!-- ALERTS -->
         <div *ngIf="formSuccess">

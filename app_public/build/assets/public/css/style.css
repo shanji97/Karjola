@@ -42,7 +42,9 @@ body {
     border-radius: 10px; }
     body .predmet-btn:hover {
       background-color: #018201; }
-
+a{
+  color: #85C1E9;
+}
 aside .content {
   font-size: 18px;
   border-radius: 20px;
@@ -89,9 +91,11 @@ main .formtitle {
     color: white; }
   .form-control::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #6c757d;
-    opacity: 1;
-    /* Firefox */ }
+    /*color: #6c757d;*/
+    color:#fff;
+    opacity: 0.65;
+ 
+   }
 
 
 
@@ -227,6 +231,8 @@ a#admin_prof_asist {
     margin-top: 70px;
 }
 
+
+
 input#admin_managment{
     color: white !important;
 }
@@ -264,14 +270,9 @@ thead {
 
 /*prijava*/
 
-form, form > small {
-  color: white; }
-
-::placeholder {
-  
-  color: red;
-  opacity: 1;
-  /* Firefox */ }
+form, form > small, .text-muted  {
+  color: white !important;
+opacity: 1;}
 
 /*potrditev*/
 .confirmation-message {
@@ -419,6 +420,16 @@ a#potrditev{
   padding-bottom: 4px;
 }
 
+small{
+  color: #fff;
+}
+::placeholder{
+  color: #fff;
+  opacity: 1;
+}
+::-ms-input-placeholder {
+  color: #fff;
+}
 
 @media (max-width: 480px) {
   .p-5 {

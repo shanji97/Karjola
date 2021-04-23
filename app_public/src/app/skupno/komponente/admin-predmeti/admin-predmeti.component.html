@@ -13,7 +13,7 @@
                     <span style="float: left"><b>{{predmet.ime}}</b></span>
                     <span style="float: right">
                         <button class="btn btn-dark btn-admin mx-2 my-0" (click)="openModal('update', predmet, i)" [disabled]="!jePovezava()">Uredi predmet</button>
-                        <button class="btn btn-danger btn-admin text-dark mx-2" (click)="openModal('delete', predmet, i)" [disabled]="!jePovezava()"><i class="far fa-trash-alt fa-lg" style="color:black;"></i></button>            
+                        <button class="btn btn-danger btn-admin text-dark mx-2" (click)="openModal('delete', predmet, i)" [disabled]="!jePovezava()" aria-label="Izbriši element."><i class="far fa-trash-alt fa-lg" style="color:black;"></i></button>            
                     </span>
                 </p>
             </div>

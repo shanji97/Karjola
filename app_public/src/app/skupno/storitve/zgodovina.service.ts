@@ -15,10 +15,12 @@ export class ZgodovinaService {
         this.urlNaslovi = [...this.urlNaslovi, url];
       })
   }
+  //filters last urls without the unwanted ones -> navigation back
   public vrniPredhodnjeUrlNaslove(): string {
     const dolzina = this.urlNaslovi.length;
     return dolzina > 1 ? this.urlNaslovi[dolzina - 2] : '/';
   }
+  //filters last urls without the unwanted ones -> navigation back
   public vrniPredhodnjeUrlNasloveBrezIzbranih(): string {
     const izloci: string[] = ['/registracija', '/prijava', '/obnoviGeslo','/vnesiNovoGeslo/:eposta', '/uporabniki/:idUporabnika', ];
     const filtrirano = this.urlNaslovi.filter(url => !izloci.includes(url));

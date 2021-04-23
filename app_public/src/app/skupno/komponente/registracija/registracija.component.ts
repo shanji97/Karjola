@@ -37,7 +37,7 @@ export class RegistracijaComponent implements OnInit {
   } 
   
   public glava = {
-    naslov: "REGISTRACIJA UPORABNIKA (spodnja vrstica je o",
+    naslov: "REGISTRACIJA UPORABNIKA",
     podnaslov: "",
 
   }

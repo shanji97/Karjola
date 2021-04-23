@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Uporabnik } from '../../razredi/uporabnik';
-import { ZgodovinaService} from '../../storitve/zgodovina.service';
 import { AvtentikacijaService } from '../../storitve/avtentikacija.service';
 
 @Component({
@@ -9,8 +8,9 @@ import { AvtentikacijaService } from '../../storitve/avtentikacija.service';
   styleUrls: ['./ogrodje.component.css']
 })
 export class OgrodjeComponent implements OnInit {
-
-  constructor(private avtentikacijaStoritev: AvtentikacijaService, private zgodovinaStoritev: ZgodovinaService) { }
+  constructor(
+    private avtentikacijaStoritev: AvtentikacijaService,
+    ) { }
 
   public odjava(): void{
     this.avtentikacijaStoritev.odjava();
@@ -23,6 +23,7 @@ export class OgrodjeComponent implements OnInit {
     return uporabnik ? uporabnik.uporabniskoIme : 'Anonimen uporabnik';
   }
   ngOnInit() {
+
   }
 
 }

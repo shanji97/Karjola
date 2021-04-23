@@ -5,7 +5,7 @@
     <img src="/assets/public/img/Logo.png" width="50" height="50" alt="">
   </a>
   <!-- Toggle navbar when screen gets too small-->
-  <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse"
+  <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" aria-label="Odpri meni"
     data-target="#toggleNavBar"></button>
   <div class="collapse navbar-collapse" id="toggleNavBar">
 
@@ -31,7 +31,7 @@
         <div class="input-group">
           <input type="text" class="form-control" [(ngModel)]="iskalniIzraz" [ngModelOptions]="{standalone: true}" placeholder="Išči gradivo" [disabled] ="!jePovezava()">
           <div class="input-group-append">
-            <button class="btn btn-secondary" type="submit" routerLink="/iskanje" [queryParams]="{iskalniIzraz: iskalniIzraz}" [disabled]="!jePovezava()">
+            <button class="btn btn-secondary" type="submit" routerLink="/iskanje" [queryParams]="{iskalniIzraz: iskalniIzraz}" aria-label="Išči literaturo & predmete in osebje." [disabled]="!jePovezava()">
               <i class="fa fa-search"></i>
             </button>
           </div>

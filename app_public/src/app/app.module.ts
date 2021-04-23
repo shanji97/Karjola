@@ -41,6 +41,7 @@ import { FormatirajSemesterPipe } from './skupno/pipes/formatiraj-semester.pipe'
 import { FormatirajTipIzbirnegaPipe } from './skupno/pipes/formatiraj-tip-izbirnega.pipe';
 import { CasOddajePipe } from './skupno/pipes/cas-oddaje.pipe';
 
+
 @NgModule({
   declarations: [
       //Komponente

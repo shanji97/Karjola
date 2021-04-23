@@ -48,10 +48,10 @@ const poti: Routes = [
     path: 'uporabniki/:idUporabnika',
     component: UporabnikComponent
   }, {
-    path: 'admin', //od tu naprej je od ostalih
+    path: 'admin', 
     component: AdminComponent
   }, {
-    path: 'admin/osebje',    //not šure če to uporabljamo, pač vse GET requeste v routerjih v app server sem pogledal
+    path: 'admin/osebje',   
     component: AdminOsebjeComponent
   },{
     path: 'gradivo/:idGradiva',

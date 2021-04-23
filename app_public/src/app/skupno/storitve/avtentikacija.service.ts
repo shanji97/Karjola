@@ -39,8 +39,8 @@ export class AvtentikacijaService {
   public vrniTrenutnegaUporabnika():Uporabnik{
     if(this.jePrijavljen()){
       const zeton: string = this.vrniZeton();
-      const {_id, uporabniskoIme,ePosta,jeAdmin} = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
-      return { _id, uporabniskoIme,ePosta,jeAdmin} as Uporabnik;
+      const {_id, uporabniskoIme,ePosta,jeAdmin,jePotrjen} = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
+      return { _id, uporabniskoIme,ePosta,jeAdmin, jePotrjen} as Uporabnik;
   }
 }
 public jeAdmin():boolean{
@@ -48,6 +48,14 @@ public jeAdmin():boolean{
     const zeton: string = this.vrniZeton();
     const zetonObj = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
     if (zetonObj.jeAdmin) return true;
+  }
+  return false;
+}
+public jePotrjen():boolean{
+  if(this.jePrijavljen()){
+    const zeton: string = this.vrniZeton();
+    const zetonObj = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
+    if (zetonObj.jePotrjen) return true;
   }
   return false;
 }
