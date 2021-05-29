@@ -15,26 +15,13 @@
       <p class="mt-3 ml-1">{{predmet.opis}}</p>
       <div>
         <a *ngFor="let profesor of predmet.profesorji" class="btn btn-profesor rounded m-1" (click)="openOsebje(profesor._id)">Profesor | {{profesor.ime_priimek}}<i class="fas fa-external-link-alt ml-2"></i></a>
-        <a *ngFor="let asistent of predmet.asistenti" class="btn btn-asistent rounded m-1" (click)="openOsebje(asistent._id)">Asistent | {{asistent.ime_priimek}}<i class="fas fa-external-link-alt ml-2"></i></a>    
-        
-        <div *ngIf="predmet.letnik > 0" class="btn btn-letnik rounded m-1">Letnik | {{predmet.letnik | formatirajLetnik}}</div>
-        
-        <div class="btn btn-semester rounded m-1">Semester | {{predmet.semester | formatirajSemester}}</div>
-        
-        <div *ngIf="predmet.vrstaIzbirnega && predmet.vrstaIzbirnega != 0" class="btn btn-tip rounded m-1">Tip | {{predmet.vrstaIzbirnega | formatirajTipIzbirnega}}</div>
-        <ng-container *ngIf="!predmet.vrstaIzbirnega || predmet.vrstaIzbirnega == 0">
-          <div *ngIf="predmet.moduli.length == 0" class="btn btn-tip rounded m-1">Tip | Obvezni predmet</div>
-          <div *ngIf="predmet.moduli.length > 0" class="btn btn-tip rounded m-1">Tip | Modulski predmet</div>
-        </ng-container>
-        
-        <div *ngFor="let modul of predmet.moduli" class="btn btn-modul rounded m-1">Modul | {{modul.ime}}</div>
-      </div>
+        <a *ngFor="let asistent of predmet.asistenti" class="btn btn-asistent rounded m-1" (click)="openOsebje(asistent._id)">Asistent | {{asistent.ime_priimek}}<i class="fas fa-external-link-alt ml-2"></i></a>
+        </div>
     </div> 
     <!--dokumenti-->
     <app-predmet-gradiva [(predmet)]="predmet"></app-predmet-gradiva>
   </div>
 </div>
-
 <ng-template #niPredmeta>
   <div style="margin-top:10px" class="alert alert-warning" role="alert">
     Nalagam predmet

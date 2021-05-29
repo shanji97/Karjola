@@ -192,7 +192,7 @@ const gradivoShema = new mongoose.Schema({
  */
 
 const predmetShema = new mongoose.Schema({
-  ime: {type: String},
+  ime: {type: String, unique: true},
   opis: {type: String},
   // 0 -> ni v letniku a, 1 -> 1. letnik...
   letnik: {type: Number},
@@ -215,7 +215,8 @@ const predmetShema = new mongoose.Schema({
   gradiva: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Gradivo'
-  }]
+  }],
+  kraticaPredmeta:{type: String, unique:true}
 });
 
 /**
