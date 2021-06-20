@@ -112,6 +112,10 @@ app.use('/api', (req, res, next) => {
     next();
 });
 
+
+
+
+
 //preusmeritev na HTTPS na Heroku
 if (process.env.NODE_ENV === 'production') {
     app.use((req, res, next) => {
@@ -164,7 +168,7 @@ app.use(function (req, res, next) {
         error: ''
     });
 });
-
+app.use(express.static('public'));
 // /api error handler
 app.use('/api', function (err, req, res, next) {
     // set locals, only providing error in development
